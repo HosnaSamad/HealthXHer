@@ -13,51 +13,48 @@
 </head>
 <body class="antialiased min-h-screen">
 
-<header id="main-header" class="sticky top-0 z-50 transition-shadow duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-    <h1 class="text-3xl font-extrabold text-primary-light cursor-pointer tracking-wider" onclick="showPage('home')">HealthXHer</h1>
+ <!-- Header & Persistent Navigation (Sticky to the top) -->
+    <header id="main-header" class="sticky top-0 z-50 transition-shadow duration-300 bg-dark"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-primary-light cursor-pointer tracking-wider" onclick="showPage('home')">HealthXHer</h1>
 
-    <!-- Desktop nav (unchanged) -->
-    <nav class="hidden md:flex space-x-6 text-gray-300 font-medium text-sm">
-      <!-- ... your existing desktop links ... -->
+            <nav id="desktop-nav" class="hidden md:flex space-x-6 text-gray-300 font-medium text-sm">
+                <a href="#home" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="home">Dashboard</a>
+                <a href="#challenges" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="challenges">Tracks</a>
+                <a href="#schedule" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="schedule">Full Schedule</a>
+                <a href="#prizes" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="prizes">Prizes</a>
+                <a href="#people" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="people">Our Team & Experts</a>
+                <a href="#submission" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="submission">Submission</a>
+                <a href="#faq" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="faq">FAQ</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                 <button id="menu-button" class="md:hidden text-primary-light text-3xl font-extrabold p-2 focus:outline-none">
+                     <span id="open-icon">☰</span>
+                     <span id="close-icon" class="hidden">✕</span>
+                 </button>
+                 <a href="#register" class="bg-primary text-white px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary-light transition duration-300 shadow-lg nav-link text-xs md:text-sm hidden sm:inline-block" data-page="register">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav id="mobile-menu" class="fixed top-[68px] left-0 w-full bg-content-light z-40 p-4 shadow-xl md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col space-y-2 text-gray-300 font-medium">
+            <a href="#home" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="home">Dashboard</a>
+            <a href="#challenges" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="challenges">Tracks</a>
+            <a href="#schedule" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="schedule">Full Schedule</a>
+            <a href="#prizes" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="prizes">Prizes</a>
+            <a href="#people" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="people">Our Team & Experts</a>
+            <a href="#submission" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="submission">Submission</a>
+            <a href="#faq" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="faq">FAQ</a>
+        </div>
+        <a href="#register" class="mt-4 w-full text-center block bg-primary-light text-white px-5 py-3 rounded-full font-bold hover:bg-primary transition duration-300 shadow-lg nav-link text-lg" data-page="register">
+             Register Now
+         </a>
     </nav>
 
-    <!-- Mobile controls -->
-    <div class="flex items-center space-x-3">
-      <!-- Mobile menu button (visible on small screens only) -->
-      <button id="menu-button" class="md:hidden p-2 rounded-md text-primary-light" aria-label="Toggle menu" aria-expanded="false" type="button">
-        <!-- Open icon (visible initially) -->
-        <span id="open-icon" class="inline-block">
-          <!-- simple hamburger -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </span>
-        <!-- Close icon (hidden initially) -->
-        <span id="close-icon" class="hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </span>
-      </button>
-
-      <!-- Registration CTA (desktop and mobile) -->
-      <a href="#register" class="bg-primary text-white px-5 py-2 rounded-full font-bold hover:bg-primary-light transition duration-300 shadow-lg nav-link text-sm" data-page="register">Register Now</a>
-    </div>
-  </div>
-
-  <!-- Mobile menu: initially hidden using Tailwind class -translate-y-full -->
-  <nav id="mobile-menu" class="-translate-y-full md:hidden fixed top-0 left-0 right-0 bg-dark z-50 p-6 transition-transform duration-300">
-    <div class="max-w-7xl mx-auto flex flex-col space-y-4">
-      <a href="#home" class="nav-link text-lg text-light" data-page="home">Dashboard</a>
-      <a href="#challenges" class="nav-link text-lg text-light" data-page="challenges">Tracks</a>
-      <a href="#schedule" class="nav-link text-lg text-light" data-page="schedule">Full Schedule</a>
-      <a href="#prizes" class="nav-link text-lg text-light" data-page="prizes">Prizes</a>
-      <a href="#people" class="nav-link text-lg text-light" data-page="people">Our Team</a>
-      <a href="#faq" class="nav-link text-lg text-light" data-page="faq">FAQ</a>
-      <a href="#register" class="nav-link text-lg text-primary-light" data-page="register">Register</a>
-    </div>
-  </nav>
-</header>
-
-<!-- ... later in the file, replace the script tag with: -->
-<script src="script.js" defer></script>
 
   <!-- Main Content Area (Container for all pages/sections) -->
     <main id="main-content" class="min-h-screen pt-1"> 
@@ -747,4 +744,5 @@
     <script src="script.js"></script>
 </body>
 </html
+
 
