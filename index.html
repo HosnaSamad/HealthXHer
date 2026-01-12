@@ -13,19 +13,19 @@
 </head>
 <body class="antialiased min-h-screen">
 
- <!-- Header & Persistent Navigation (Sticky to the top) -->
+    <!-- Header & Persistent Navigation (Sticky to the top) -->
     <header id="main-header" class="sticky top-0 z-50 transition-shadow duration-300 bg-dark"> 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <h1 class="text-3xl font-extrabold text-primary-light cursor-pointer tracking-wider" onclick="showPage('home')">HealthXHer</h1>
 
             <nav id="desktop-nav" class="hidden md:flex space-x-6 text-gray-300 font-medium text-sm">
-                <a href="#home" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="home">Dashboard</a>
+                <!--<a href="#home" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="home">Dashboard</a>-->
                 <a href="#about-more" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="about-more">About</a>
                 <a href="#challenges" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="challenges">Tracks</a>
                 <a href="#schedule" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="schedule">Full Schedule</a>
                 <a href="#prizes" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="prizes">Prizes</a>
                 <a href="#people" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="people">Our Team & Experts</a>
-                <a href="#submission" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="submission">Submission</a>
+              <!--  <a href="#submission" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="submission">Submission</a>-->
                 <a href="#faq" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="faq">FAQ</a>
             </nav>
 
@@ -43,13 +43,13 @@
 
     <nav id="mobile-menu" class="fixed top-[68px] left-0 w-full bg-content-light z-40 p-4 shadow-xl md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out">
         <div class="flex flex-col space-y-2 text-gray-300 font-medium">
-            <a href="#home" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="home">Dashboard</a>
+           <!-- <a href="#home" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="home">Dashboard</a>-->
             <a href="#about-more" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="about-more">About</a>
             <a href="#challenges" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="challenges">Tracks</a>
             <a href="#schedule" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="schedule">Full Schedule</a>
             <a href="#prizes" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="prizes">Prizes</a>
             <a href="#people" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="people">Our Team & Experts</a>
-            <a href="#submission" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="submission">Submission</a>
+           <!-- <a href="#submission" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="submission">Submission</a>-->
             <a href="#faq" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="faq">FAQ</a>
         </div>
         <a href="#register" class="mt-4 w-full text-center block bg-primary-light text-white px-5 py-3 rounded-full font-bold hover:bg-primary transition duration-300 shadow-lg nav-link text-lg" data-page="register">
@@ -57,8 +57,7 @@
          </a>
     </nav>
 
-
-  <!-- Main Content Area (Container for all pages/sections) -->
+    <!-- Main Content Area (Container for all pages/sections) -->
     <main id="main-content" class="min-h-screen pt-1"> 
 
         <!-- 1. Home / Dashboard (Expanded Summary Page) -->
@@ -67,13 +66,20 @@
             <div class="hero-section py-20 md:py-32 overflow-hidden relative shadow-inner">
                 
                 <!-- Background Image Layer: Absolutely positioned and low opacity -->
-                <img src='az-signature-picture-woman.png' class="absolute inset-0 w-full h-full object-cover opacity-10 z-0">
+                <img src='assets/images/az-signature-picture-woman.png'
+                     alt="Abstract Health Graphic Background" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-lighten z-0"
+                     onerror="this.style.display='none'">
+                
                 <!-- Subtle Texture Layer (for visual depth) -->
+                <div class="absolute inset-0 opacity-10 bg-repeat z-10 texture-bg"></div>
                 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 animate-intro">
                     <h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-white">
                         HealthXHer
                     </h2>
+                     <h3 class="text-4xl md:text-4xl font-extrabold tracking-tighter mb-4 text-primary-light">
+                        Brought To You by The AstraZeneca Campus Ambassadors 2025                    </h3>
                     <p class="text-xl md:text-2xl opacity-90 max-w-5xl mx-auto mb-10 font-medium italic text-light">
                         An interdisciplinary hackathon where creativity outweighs coding, uniting all backgrounds to tackle critical challenges in women’s health.
                     </p>
@@ -85,7 +91,7 @@
                 </div>
             </div>
 
-             <!-- About Us Section -->
+            <!-- About Us Section Summarised -->
             <div class="py-16 md:py-20 bg-content-light">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h3 class="text-4xl font-extrabold mb-6 text-primary-light">
@@ -110,12 +116,13 @@
                         </p>
                         <!-- CTA to scroll down to the team section -->
                         <a href="#about-more" onclick="showPage('about-more')" class="text-lg font-bold px-6 py-2 rounded-full border-2 hover:bg-primary-light transition duration-300 text-primary-light border-primary-light">
-                            Learn more about us →
-                        </a>
+                        Learn more about us →
+                        </a>    
                     </div>
                 </div>
             </div>
-
+            
+    
             <!-- Summary Content: Tracks/Challenges -->
             <div class="py-16 md:py-20 bg-dark">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,52 +191,47 @@
                 </div>
             </div>
 
-            <!-- Summary Content: Prizes and Perks -->
-            <div class="py-16 md:py-20 bg-dark">
+           <!-- 3. Redesigned Prizes & Perks -->
+            <div class="py-16 md:py-24 bg-dark">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h3 class="text-4xl font-extrabold text-center mb-12 text-primary-light">
-                        WHAT YOU CAN WIN
+                    <h3 class="text-4xl font-black text-center mb-16 text-primary-light tracking-tight uppercase">
+                        Perks for All Participants
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        
-                        <!-- Prize 1 Summary -->
-                        <div class="content-card p-6 rounded-xl shadow-2xl border-t-8 border-yellow-400 bg-content-light">
-                            <h4 class="text-3xl font-extrabold text-yellow-400 mb-2">🥇 1st Place</h4>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-300">
-                                <li>Personal CV Review by Senior HR</li>
-                                <li>1:1 follow-up with Mentors</li>
-                                <li>AZ Site Tour & Global Recognition</li>
-                            </ul>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🎓</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Certification</h4>
+                            <p class="text-gray-400 text-sm">Official participation certificate from AstraZeneca professionals.</p>
                         </div>
-
-                        <!-- Prize 2 Summary -->
-                        <div class="content-card p-6 rounded-xl shadow-2xl border-t-8 border-gray-400 bg-content-light">
-                            <h4 class="text-3xl font-extrabold text-gray-400 mb-2">🥈 2nd Place</h4>
-                             <ul class="list-disc pl-5 space-y-1 text-sm text-gray-300">
-                                <li>1-hour Mentorship for Project Deep Dive</li>
-                                <li>Official Digital Platforms Appearance</li>
-                                <li>Full Access to Final Event & Networking</li>
-                            </ul>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">💬</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Expert Feedback</h4>
+                            <p class="text-gray-400 text-sm">Direct project critique from industry leaders to boost your career.</p>
                         </div>
-
-                        <!-- Prize 3 Summary -->
-                        <div class="content-card p-6 rounded-xl shadow-2xl border-t-8 border-yellow-700 bg-content-light">
-                            <h4 class="text-3xl font-extrabold text-yellow-700 mb-2">🥉 3rd Place</h4>
-                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-300">
-                                <li>1-hour Virtual Meeting with a Jury Member</li>
-                                <li>Exclusive HealthXHer Merchandise</li>
-                                <li>Full Access to Final Event & Networking</li>
-                            </ul>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🤝</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Networking</h4>
+                            <p class="text-gray-400 text-sm">Connect with professionals and students from top universities.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🛠️</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Workshops</h4>
+                            <p class="text-gray-400 text-sm">Exclusive hands-on training sessions with industry experts.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 border-primary-light bg-primary/10 group">
+                            <span class="text-4xl mb-4 block glow-accent">💎</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">All-Inclusive</h4>
+                            <p class="text-gray-400 text-sm">Fully paid expenses for travel and accommodation during finals.</p>
                         </div>
                     </div>
-                     <div class="text-center mt-10">
-                        <a href="#prizes" onclick="showPage('prizes')" class="border-2 text-primary-light px-6 py-2 rounded-full font-bold hover:bg-primary-light hover:text-white transition duration-300 inline-block border-primary-light">
-                            See All Perks & Opportunities →
+                    <div class="text-center mt-12">
+                        <a href="#prizes" onclick="showPage('prizes')" class="border-2 border-primary-light text-primary-light px-8 py-3 rounded-full font-bold hover:bg-primary-light hover:text-dark transition duration-300 inline-block">
+                            See All Perks →
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Final CTA -->
             <div class="py-12 text-center bg-primary">
                 <h4 class="text-3xl font-extrabold mb-4 text-white">Ready to Innovate?</h4>
@@ -239,7 +241,7 @@
             </div>
         </section>
 
-        <!-- About Us Section - More Details -->
+          <!-- About Us Section - More Details -->
             <section id="about-more" class="page-content">
                 <div class="max-w-6xl mx-auto px-6 py-20 space-y-16">
 
@@ -382,11 +384,11 @@
                     <!-- Final Info -->
                     <div class="space-y-6 text-center">
                         <p class="text-lg text-gray-300">
-                            Winners will be announced during the National Finals on <strong>XXth March 2026</strong>.
+                            Winners will be announced during the National Finals on <strong>13th March 2026</strong>.
                         </p>
                         <p class="text-lg text-gray-300">
-                            Contact: <a href="mailto:xxxxxxxxxxxxx@gmail.com" class="underline text-primary-light">
-                                xxxxxxxxxxxxx@gmail.com
+                            Contact: <a href="mailto:healthxher@gmail.com" class="underline text-primary-light">
+                                healthxher@gmail.com
                             </a>
                         </p>
 
@@ -399,6 +401,8 @@
                 </div>
          </section>
 
+
+
         <!-- 2. Tracks / Challenges + Judging Criteria Page (Full Detail) -->
         <section id="challenges" class="page-content">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -406,10 +410,13 @@
                     The Challenge Tracks
                 </h3>
                 <p class="text-xl text-center text-gray-300 mb-16 max-w-4xl mx-auto">
-                    Select one of three high-impact areas to develop an interdisciplinary solution for female health challenges.
+                    For further information on each challenge track, including context, objectives, and judging criteria, please read 
+                    <a href="documents/participation-guide.pdf" target="_blank" rel="noopener noreferrer" class="text-primary-light underline font-semibold">
+                        The Participation Guide
+                    </a>
                 </p>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                     <!-- Challenge 1 Detail-->
                     <div class="content-card p-8 rounded-xl shadow-2xl border-t-8 bg-content-light border-accent-light">
                         <h4 class="text-3xl font-bold mb-3 text-white">Oncology safety: early detection of sex-specific adverse events</h4>
@@ -496,10 +503,13 @@
                             🥇 Grand Winner
                         </h4>
                         <ul class="list-disc pl-5 space-y-3 text-lg text-light">
-                            <li>Personal Personal CV Review by Senior HR.</li>
-                            <li>1:1 follow-up meetings with mentors for project deep dive.</li>
-                            <li>Exclusive AZ Goodie Bags & VIP Site Tour Access.</li>
-                            <li>Official digital platforms appearance (external and internal).</li>
+                            <li>Opportunity to present your project to a relevant AZ department/team</li>
+                            <li>Personalized career roadmap session with an HR leader or senior director</li>
+                            <li>Exclusive behind-the-scenes lab/campus tour at an AZ R&D site</li>
+                            <li>Spotify recognition</li>
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement</li>
+                            
                         </ul>
                     </div>
 
@@ -509,9 +519,10 @@
                             🥈 2nd Place
                         </h4>
                         <ul class="list-disc pl-5 space-y-3 text-lg text-light">
-                            <li>1:1 meeting with mentors for specific project improvements.</li>
-                            <li>1-hour follow-up online meeting with mentors.</li>
-                            <li>Official digital platforms appearance (external and internal).</li>
+                            <li>Spotify Podcastrecognition</li>
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement</li>
+                            <li>AZ Gothenburg site tour.</li>
                         </ul>
                     </div>
 
@@ -521,23 +532,48 @@
                             🥉 3rd Place
                         </h4>
                        <ul class="list-disc pl-5 space-y-3 text-lg text-light">
-                            <li>1 hour online meeting with mentors for potential next steps.</li>
-                            <li>Exclusive HealthXHer branded merchandise package.</li>
-                            <li>Official digital platforms appearance (external and internal).</li>
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement.</li>
+                            <li>AZ Gothenburg site tour.</li>
                         </ul>
                     </div>
+                    <div style="margin-top: 20px;"></div>
                 </div>
 
-                <!-- General Perks -->
-                <div class="mt-20 p-8 rounded-xl shadow-2xl content-card border-l-8 bg-dark border-primary-light">
-                    <h4 class="text-3xl font-bold text-gray-100 mb-4 text-center">Perks for All Participants</h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-lg font-medium text-primary-light">
-                        <p>✅ AZ site tour</p>
-                        <p>✅ Full Catering (Lunch & Fika)</p>
-                        <p>✅ Professional Networking</p>
-                        <p>✅ Expert Workshops Access</p>
+
+                <div class="content-card p-8 rounded-xl shadow-xl border-b-8 border-yellow-700 bg-dark">
+                    <h3 class="text-4xl font-black text-center mb-8 text-primary-light tracking-tight uppercase">
+                        For All Participants
+                    </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🎓</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Certification</h4>
+                            <p class="text-gray-400 text-sm">Official participation certificate from AstraZeneca Campus Ambassadors.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">💬</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Expert Feedback</h4>
+                            <p class="text-gray-400 text-sm">Direct project critique from industry leaders to boost your project.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🤝</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Networking</h4>
+                            <p class="text-gray-400 text-sm">Connect with professionals and students from top universities.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🛠️</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Workshops</h4>
+                            <p class="text-gray-400 text-sm">Exclusive Workshop sessions with industry experts.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 border-primary-light bg-primary/10 group">
+                            <span class="text-4xl mb-4 block glow-accent">💎</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">All-Inclusive</h4>
+                            <p class="text-gray-400 text-sm">Fully paid expenses for catering and participation.</p>
+                        </div>
                     </div>
-                </div>
+                    </div>
+        </section>
             </div>
         </section>
 
@@ -886,7 +922,7 @@
                     <ul class="space-y-2">
                         <li><a href="#challenges" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="challenges">Challenge Tracks</a></li>
                         <li><a href="#schedule" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="schedule">Full Agenda</a></li>
-                        <li><a href="#people" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="people">Our Team & Experts</a></li>
+                        <li><a href="#people" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="people">Our Team</a></li>
                     </ul>
                 </div>
                 <div>
@@ -894,11 +930,11 @@
                     <p class="text-gray-400">
                         For questions, contact the organizing team.
                     </p>
-                    <p class="mt-2 text-primary-light font-medium">XXXXX@gmail.com</p>
+                    <p class="mt-2 text-primary-light font-medium">healthxher@gmail.com</p>
                 </div>
             </div>
             <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
-                &copy; 2025 HealthXHer Hackathon. Hosted by AstraZeneca.
+                &copy; 2025 HealthXHer Hackathon. Hosted by The AstraZeneca Campus Ambassadors 2025.
             </div>
         </div>
     </footer>
@@ -907,6 +943,7 @@
     <script src="script.js"></script>
 </body>
 </html
+
 
 
 
