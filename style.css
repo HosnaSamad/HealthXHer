@@ -40,6 +40,22 @@ body {
 .hero-section { background-color: var(--primary-color); }
 .texture-bg { background-image: url(az-signature-picture-woman.png); background-size: 20px; }
 
+/*AZ logo animation*/
+@keyframes slideX {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(calc(100vw - 8rem));
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-x {
+  animation: slideX 20s linear infinite;
+}
 
 
 /* Page Content Visibility (SPA navigation handling) */
@@ -190,6 +206,7 @@ body {
     }
 
 }
+
 
 
 
