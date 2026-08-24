@@ -1,0 +1,192 @@
+/* ------------------------------------------- */
+/* 1. COLOR PALETTE DEFINITION */
+/* ------------------------------------------- */
+
+/* Define CSS Variables for easy color management */
+:root {
+    --background-dark: #5c063a;   /* Darkest Berry/Maroon - Main Body Background (dark) */
+    --content-bg-light: #80134f;  /* Slightly lighter for section separation (medium-dark) */
+    --primary-color: #830251;     /* Core Brand Color/CTAs (medium) */
+    --primary-light: #c84877;     /* Brightest Accent/Highlight (light) */
+    --text-light: #f3f4f6;        /* White/Light text for readability */
+    --neutral-card: #F3E8F4;      /* Very Pale Lilac/White card background (neutral/light) */
+    --text-dark: #5c063a;         /* Dark text for light cards */
+}
+
+/* ------------------------------------------- */
+/* 2. BASE STYLES AND TAILWIND OVERRIDES */
+/* ------------------------------------------- */
+
+/* Apply base colors and font to the entire body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+    background-color: var(--background-dark);
+    scroll-behavior: smooth;
+}
+
+/* Custom Tailwind utility classes for cleaner HTML markup */
+.bg-dark { background-color: var(--background-dark); }
+.bg-content-light { background-color: var(--content-bg-light); }
+.bg-primary { background-color: var(--primary-color); }
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-neutral-card { background-color: var(--neutral-card); }
+.text-light { color: var(--text-light); }
+.text-primary-light { color: var(--primary-light); }
+.text-dark-text { color: var(--text-dark); }
+.border-primary { border-color: var(--primary-color); }
+.border-primary-light { border-color: var(--primary-light); }
+.border-accent-light { border-color: var(--primary-light); } /* Alias for the brightest accent */
+.hero-section { background-color: var(--primary-color); }
+.texture-bg { background-image: url(az-signature-picture-woman.png); background-size: 20px; }
+
+
+/* Page Content Visibility (SPA navigation handling) */
+/* Initially set to fade out, making the transition smoother */
+.page-content {
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.page-content.active {
+    display: block; 
+    opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* 3. ANIMATIONS AND INTERACTIVE EFFECTS */
+/* ------------------------------------------- */
+
+/* Keyframes for the content load animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.animate-intro {
+    animation-name: fadeInScale;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+/* Interactive Card Effect on hover for content-card elements */
+.content-card {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.content-card:hover {
+    transform: translateY(-4px);
+    /* Shadow uses the primary light accent color for branding consistency */
+    box-shadow: 0 15px 30px -5px rgba(200, 72, 119, 0.4), 0 2px 4px -1px rgba(200, 72, 119, 0.1);
+}
+
+/* Header Shadow on Scroll */
+.header-shadow-scroll {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+/* ================================================= */
+/* !!! NEW: SMART HEADER STYLES !!! */
+/* ================================================= */
+
+/* Ensure the header has a smooth transition for the smart header effect */
+#main-header {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* New class to hide the header by moving it up by its full height (100% of itself) */
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* ------------------------------------------- */
+/* 4. LAYOUT SPECIFIC STYLES (Timeline) */
+/* ------------------------------------------- */
+
+.timeline-container {
+    position: relative;
+    padding: 0 0 0 20px; /* Space for the line on mobile */
+}
+
+/* Vertical line for the timeline on desktop */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    margin-left: -2px;
+    top: 0;
+    background-color: var(--primary-light); /* Color set via Tailwind class */
+}
+
+.timeline-event {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Circle markers for events (desktop view) */
+.timeline-event:before {
+    content: '';
+    position: absolute;
+    background-color: var(--primary-light);
+    border: 3px solid var(--background-dark);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 10;
+    top: 35px;
+}
+
+/* Left side events marker position (desktop) */
+.left-event:before {
+    left: calc(50% - 10px);
+    transform: translateX(-10px);
+}
+
+/* Right side events marker position (desktop) */
+.right-event:before {
+    left: calc(50% - 10px);
+    transform: translateX(-10px);
+}
+
+/* Reset marker position for mobile view (stacked layout) */
+@media (max-width: 768px) {
+    .timeline-container {
+        padding: 0 0 0 20px;
+    }
+    .timeline-event:before {
+        left: 0;
+        transform: translateX(0);
+    }
+    .timeline-line {
+        left: 10px;
+    }
+    .left-event:before, .right-event:before {
+        left: 10px;
+        transform: translate(-50%, 0);
+    }
+    
+    /* Ensure all text is left-aligned and full width on mobile */
+    .left-event > div, .right-event > div {
+        width: 100%;
+        padding: 0 0 0 20px;
+        text-align: left !important;
+    }
+}
+
+
+/* ------------------------------------------- */
+/* 5. RESPONSIVENESS */
+/* ------------------------------------------- */
+
+/* Specific styles for the 4-column challenge grid on small screens */
+@media (max-width: 768px) {
+    .challenge-grid-4-col {
+        grid-template-columns: 1fr; /* Stacked on mobile */
+    }
+}
