@@ -95,14 +95,21 @@ const timeline = [
 ];
 
 const team = [
-  { name: "Anita Nicoletti", img: anita, url: "https://www.linkedin.com/in/anita-nicoletti-1078b3200/" },
-  { name: "Hosna Samad", img: hosna, url: "https://www.linkedin.com/in/hosna-samad/" },
-  { name: "Millena Navega", img: millena, url: "https://www.linkedin.com/in/millena-navega/" },
-  { name: "Divya Bansal", img: xxx, url: "xxx" },
-  { name: "Alina Tulegenova", img: xxx, url: "xxx" },
-  { name: "Clémence Leclercq", img: xxx, url: "xxx" },
-  { name: "Suzan Gumush", img: xxx, url: "xxx" },
-  { name: "Chloé Dao", img: xxx, url: "xxx" }
+  {
+    name: "Anita Nicoletti",
+    img: anita,
+    url: "https://www.linkedin.com/in/anita-nicoletti-1078b3200/",
+  },
+  {
+    name: "Hosna Samad",
+    img: hosna,
+    url: "https://www.linkedin.com/in/hosna-samad/",
+  },
+  {
+    name: "Millena Navega",
+    img: millena,
+    url: "https://www.linkedin.com/in/millena-navega/",
+  },
 ];
 
 const faqs = [
