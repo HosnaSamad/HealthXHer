@@ -2,20 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import posterImg from "@/assets/team/healthxher_poster.png";
 import azImg from "@/assets/team/AZ_SPONSORED.png";
-import aayushi from "@/assets/team/Aayushi.png";
-import beatriz from "@/assets/team/Beatriz.png";
 import hosna from "@/assets/team/Hosna.png";
 import millena from "@/assets/team/Millena.png";
+import anita from "@/assets/team/Anita.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "HealthXHer 2026 — Femtech Hackathon" },
+      { title: "HealthXHer 2027 — Femtech Hackathon" },
       {
         name: "description",
         content:
-          "HealthXHer is an interdisciplinary femtech hackathon closing the gender health gap. Sweden · powered by AstraZeneca.",
+          "HealthXHer is an interdisciplinary femtech hackathon closing the gender health gap.",
       },
     ],
     links: [
@@ -92,19 +91,18 @@ const tracks = [
 
 const timeline = [
   { phase: "Phase 01", date: "19 Jan", title: "Applications open" },
-  { phase: "Phase 02", date: "09 Feb", title: "Virtual kick-off" },
-  { phase: "Phase 03", date: "09–22 Feb", title: "Project development" },
-  { phase: "Phase 04", date: "02 Mar", title: "Semi-finals · Lund · Gothenburg · Stockholm" },
-  { phase: "Phase 05", date: "03–08 Mar", title: "Finalist mentorship" },
-  { phase: "Phase 06", date: "13 Mar", title: "Grand finale · AZ Gothenburg" },
+  
 ];
 
 const team = [
-  { name: "Anita Nicoletti", img: "https://media.licdn.com/dms/image/v2/D4D03AQG_kmUPN5XQUQ/profile-displayphoto-crop_800_800/B4DZj_mQnUGQAI-/0/1756634877727?e=1778716800&v=beta&t=wRthDMu22H69cuBLotmKBhh-LtzZegM5HlDr-gHAPns", url: "https://www.linkedin.com/in/anita-nicoletti-1078b3200/" },
+  { name: "Anita Nicoletti", img: anita, url: "https://www.linkedin.com/in/anita-nicoletti-1078b3200/" },
   { name: "Hosna Samad", img: hosna, url: "https://www.linkedin.com/in/hosna-samad/" },
   { name: "Millena Navega", img: millena, url: "https://www.linkedin.com/in/millena-navega/" },
-  { name: "Beatriz Carvalho", img: beatriz, url: "https://www.linkedin.com/in/beatriznmcarvalho/" },
-  { name: "Aayushi Patel", img: aayushi, url: "https://www.linkedin.com/in/aayushi-patel-9988491b9/" },
+  { name: "Divya Bansal", img: xxx, url: "xxx" },
+  { name: "Alina Tulegenova", img: xxx, url: "xxx" },
+  { name: "Clémence Leclercq", img: xxx, url: "xxx" },
+  { name: "Suzan Gumush", img: xxx, url: "xxx" },
+  { name: "Chloé Dao", img: xxx, url: "xxx" }
 ];
 
 const faqs = [
@@ -425,12 +423,11 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6 text-sm text-[color:var(--muted-foreground)]">
           <div className="flex items-center gap-4">
             <span className="font-display text-xl text-[color:var(--plum)]">HealthXHer</span>
-            <span>© 2026 · Sweden</span>
+            <span>© 2027 · Sweden</span>
           </div>
           <div className="flex items-center gap-6">
             <Link to="/archive/v1" className="ulink">First-edition archive</Link>
             <a className="ulink" href="mailto:healthxher@gmail.com">healthxher@gmail.com</a>
-            <img src={azImg} alt="AstraZeneca" className="h-7 opacity-80" />
           </div>
         </div>
       </footer>
