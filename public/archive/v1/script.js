@@ -131,6 +131,21 @@ function handleSmartHeader() {
     lastScrollY = currentScrollY;
 }
 
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+}
 
 // --- 5. Mobile Menu Logic (NEW) ---
 
