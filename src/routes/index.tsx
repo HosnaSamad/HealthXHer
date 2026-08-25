@@ -162,15 +162,12 @@ function Home() {
               <em className="text-[color:var(--foreground)] not-italic font-medium">creativity outweighs coding</em> — uniting students across Sweden to close the gender health gap.
             </p>
             <div className="md:col-span-5 flex flex-col items-start md:items-end gap-4">
-              <a
-                href="#register"
+              <Link
+                to="/archive/v1"
                 className="group inline-flex items-center gap-3 bg-[color:var(--plum)] text-[color:var(--blush)] px-7 py-4 rounded-full text-sm uppercase tracking-[0.2em] hover:bg-[color:var(--sage)] transition-colors"
               >
-                Express interest to join the second edition
+                See the first-edition site
                 <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
-              <Link to="/archive/v1" className="text-sm text-[color:var(--muted-foreground)] ulink">
-                See the first-edition site ↗
               </Link>
             </div>
           </div>
@@ -183,7 +180,6 @@ function Home() {
             ["06", "Weeks of innovation"],
             ["6", "Host cities"],
             ["3", "Countries"],
-            ["01", "Grand finale"],
           ].map(([n, l]) => (
             <div key={l} className="border-t border-[color:var(--plum)]/20 pt-4">
               <div className="font-display text-5xl text-[color:var(--plum)]">{n}</div>
@@ -412,7 +408,7 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section id="register" className="py-28 md:py-40 relative overflow-hidden">
+      <section id="Contact Us" className="py-28 md:py-40 relative overflow-hidden">
         <div className="absolute inset-0 grain" />
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] glow-rose blob" />
         <div className="relative max-w-5xl mx-auto px-6 text-center">
@@ -420,7 +416,7 @@ function Home() {
             Ready to <em className="text-[color:var(--rose)]">build</em> the next chapter of women's health?
           </h2>
           <p className="mt-8 text-lg text-[color:var(--muted-foreground)] max-w-xl mx-auto reveal">
-            Weather you are interested to join the second edition, or want to support us or collaborate, we would love to hear from you!
+            Whether you are interested to join the second edition, or want to support us or collaborate, we would love to hear from you!
           </p>
           <a href="mailto:healthxher@gmail.com" className="reveal mt-12 inline-flex items-center gap-3 bg-[color:var(--plum)] text-[color:var(--blush)] px-8 py-5 rounded-full uppercase tracking-[0.2em] text-sm hover:bg-[color:var(--sage)] transition">
             Contact us →
@@ -464,7 +460,7 @@ function Nav() {
             <a key={id} href={`#${id}`} className="ulink hover:text-[color:var(--plum)] transition">{l}</a>
           ))}
         </nav>
-        <a href="#register" className="text-xs uppercase tracking-[0.2em] bg-[color:var(--plum)] text-[color:var(--blush)] px-4 py-2.5 rounded-full hover:bg-[color:var(--sage)] transition">Register</a>
+        <a href="#Contact Us" className="text-xs uppercase tracking-[0.2em] bg-[color:var(--plum)] text-[color:var(--blush)] px-4 py-2.5 rounded-full hover:bg-[color:var(--sage)] transition">Contact Us</a>
       </div>
     </header>
   );
