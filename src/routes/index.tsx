@@ -89,10 +89,12 @@ const tracks = [
   },
 ];
 
+
 const timeline = [
   { phase: "Phase 01", date: "19 Jan", title: "Applications open" },
   
 ];
+
 
 const team = [
   {
@@ -116,9 +118,9 @@ const faqs = [
   { q: "Why should I join?", a: "Collaborate with diverse talent, gain hands-on experience on real women's health challenges, and showcase your work to AstraZeneca leaders and experts." },
   { q: "Team size", a: "Teams of exactly 4 participants. We require multidisciplinary teams to ensure robust solutions across the tracks." },
   { q: "How are teams formed?", a: "First-come, first-served per university. Register individually; we'll match solo participants on Slack after kick-off based on skills and interests." },
-  { q: "In-person commitment", a: "Kick-off and the first project weeks are online. Semi-finals (Lund/Gothenburg/Stockholm) and the Grand Final (AZ Gothenburg) are mandatory in-person events. Travel is covered for finalists." },
+  { q: "In-person commitment", a: "More to follow." },
   { q: "Final deliverable", a: "A working prototype, design document, or comprehensive concept that addresses your chosen challenge. Concept-stage solutions are welcome." },
-  { q: "Intellectual property", a: "Participants retain full ownership of background knowledge and all IP developed during HealthXHer." },
+  { q: "Intellectual property", a: "More to follow." },
 ];
 
 /* ---------- page ---------- */
@@ -145,7 +147,7 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[color:var(--muted-foreground)] mb-8 reveal">
             <span className="w-8 h-px bg-current" />
-            Edition 02 · Sweden · 2026
+            Edition 02 · Sweden · Denmark · France · 2027
           </div>
 
           <h1 className="reveal text-[clamp(3rem,9vw,9rem)] leading-[0.92] font-display tracking-tighter">
@@ -164,7 +166,7 @@ function Home() {
                 href="#register"
                 className="group inline-flex items-center gap-3 bg-[color:var(--plum)] text-[color:var(--blush)] px-7 py-4 rounded-full text-sm uppercase tracking-[0.2em] hover:bg-[color:var(--sage)] transition-colors"
               >
-                Register your team
+                Express interest to join the second edition
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <Link to="/archive/v1" className="text-sm text-[color:var(--muted-foreground)] ulink">
@@ -179,7 +181,8 @@ function Home() {
           {[
             ["03", "Challenge tracks"],
             ["06", "Weeks of innovation"],
-            ["3", "Host cities"],
+            ["6", "Host cities"],
+            ["3", "Countries"],
             ["01", "Grand finale"],
           ].map(([n, l]) => (
             <div key={l} className="border-t border-[color:var(--plum)]/20 pt-4">
@@ -195,7 +198,7 @@ function Home() {
         <div className="marquee-track flex gap-16 whitespace-nowrap text-[color:var(--plum)] font-display text-2xl">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-16 shrink-0">
-              {["Femtech", "·", "Interdisciplinary", "·", "AI for health", "·", "Equity by design", "·", "Sweden 2026", "·", "Powered by AstraZeneca", "·"].map((t, j) => (
+              {["Femtech", "·", "Interdisciplinary", "·", "AI for health", "·", "Equity by design", "·", "Sweden 2027", "·", "Denmark 2027", "·", "France 2027", "·"].map((t, j) => (
                 <span key={j} className={t === "·" ? "text-[color:var(--rose)]" : ""}>{t}</span>
               ))}
             </div>
@@ -236,7 +239,7 @@ function Home() {
               <h2 className="text-4xl md:text-6xl font-display">Three challenges.<br />One mission.</h2>
             </div>
             <p className="max-w-md text-[color:var(--blush)]/70">
-              Designed with our Campus Ambassadors. Pick a track, form a team, ship a prototype that matters.
+              First edition focused on oncology, autoimmune care and cancer screening. Stay tuned for the Second edition's tracks, coming soon!
             </p>
           </div>
 
@@ -291,7 +294,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 reveal">
             <p className="text-xs uppercase tracking-[0.25em] text-[color:var(--sage)] mb-3">— Schedule</p>
-            <h2 className="text-4xl md:text-6xl font-display max-w-2xl">From kick-off in Sweden to the grand finale in Gothenburg.</h2>
+            <h2 className="text-4xl md:text-6xl font-display max-w-2xl"> Stay tuned for the full schedule!</h2>
           </div>
 
           <div className="relative">
@@ -318,7 +321,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 reveal">
             <p className="text-xs uppercase tracking-[0.25em] text-[color:var(--sage)] mb-3">— Prizes & perks</p>
-            <h2 className="text-4xl md:text-6xl font-display max-w-3xl">Recognition built for early talent.</h2>
+            <h2 className="text-4xl md:text-6xl font-display max-w-3xl">Recognition built for early talent. Have a look at last year&apos;s prizes.</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -417,10 +420,10 @@ function Home() {
             Ready to <em className="text-[color:var(--rose)]">build</em> the next chapter of women's health?
           </h2>
           <p className="mt-8 text-lg text-[color:var(--muted-foreground)] max-w-xl mx-auto reveal">
-            Applications open 19 January 2026. Four-person teams, six weeks, one grand finale in Gothenburg.
+            Weather you are interested to join the second edition, or want to support us or collaborate, we would love to hear from you!
           </p>
           <a href="mailto:healthxher@gmail.com" className="reveal mt-12 inline-flex items-center gap-3 bg-[color:var(--plum)] text-[color:var(--blush)] px-8 py-5 rounded-full uppercase tracking-[0.2em] text-sm hover:bg-[color:var(--sage)] transition">
-            Reserve your team's spot →
+            Contact us →
           </a>
         </div>
       </section>
@@ -430,7 +433,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6 text-sm text-[color:var(--muted-foreground)]">
           <div className="flex items-center gap-4">
             <span className="font-display text-xl text-[color:var(--plum)]">HealthXHer</span>
-            <span>© 2027 · Sweden</span>
+            <span>© 2027 · Sweden · All rights reserved</span>
           </div>
           <div className="flex items-center gap-6">
             <Link to="/archive/v1" className="ulink">First-edition archive</Link>
