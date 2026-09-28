@@ -3,15 +3,21 @@ import { Linkedin } from "lucide-react";
 import { PageShell, SectionIntro } from "@/components/site-shell";
 import { routeMeta } from "@/lib/content";
 import eventImage from "@/assets/gallery-06.JPG.asset.json";
-import hosna from "@/assets/Hosna.png.asset.json";
-import anita from "@/assets/Anita.png.asset.json";
-import millena from "@/assets/Millena.png.asset.json";
-import beatriz from "@/assets/Beatriz.png.asset.json";
+import hosna from "@/assets/Hosna.png";
+import anita from "@/assets/Anita.png";
+import millena from "@/assets/Millena.png";
+import divya from "@/assets/divya.jpeg";
+import chloe from "@/assets/chloe.png";
+import alina from "@/assets/alina.png";
+import clemence from "@/assets/clemence.jpg";
 
 export const Route = createFileRoute("/about")({ head: () => routeMeta("About HealthXHer", "Meet the mission, vision and team building a more equitable future for women's health."), component: AboutPage });
 
 const team = [
-  ["Hosna Samad", "Co-founder & Executive", hosna.url], ["Anita Nicoletti", "Co-founder & Executive", anita.url], ["Millena Navega", "Executive", millena.url], ["Beatriz", "Community Lead", beatriz.url],
+  ["Hosna Samad", "Co-founder & Executive", hosna.url], ["Anita Nicoletti", "Co-founder & Executive", anita.url], 
+  ["Millena Navega", "Executive", millena.url], ["Divya Bansal", "Business Lead", divya.url], 
+  ["Chloé Dao", "Design Lead", chloe.url], ["Alina Tulegenova", "Marketing Lead", alina.url], 
+  ["Clémence Leclerq", "Logistics Lead", clemence.url],
 ];
 
 function AboutPage() {

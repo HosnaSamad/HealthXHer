@@ -13,14 +13,21 @@ const navItems = [
   { label: "Archive", to: "/archive" },
 ] as const;
 
+import logoAsset from "@/assets/logo.png";
+
 export function BrandMark() {
   return (
-    <Link to="/" className="flex items-center gap-2 text-accent" aria-label="HealthXHer home">
-      <span className="brand-symbol" aria-hidden="true">H</span>
-      <span className="font-display text-xl">HealthXHer</span>
+    <Link to="/" className="flex items-center" aria-label="HealthXHer home">
+      <img 
+        src={logoAsset} 
+        alt="HealthXHer" 
+        className="h-9 w-auto object-contain" 
+      />
     </Link>
   );
 }
+
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);

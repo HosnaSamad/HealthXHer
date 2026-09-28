@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand, PageShell, SectionIntro } from "@/components/site-shell";
 import { faqs, routeMeta, tracks } from "@/lib/content";
 import { images } from "@/lib/media";
+import wordmark from "@/assets/wordmark.png";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -54,67 +55,58 @@ function HomePage() {
   const active = tracks[activeTrack];
   if (!active) return null;
 
-  return (
-    <PageShell>
-      <div className="page-enter">
-        <section
-          ref={heroRef}
-          className="relative overflow-hidden spotlight pb-24 pt-16 md:pb-36 md:pt-24"
-        >
-          <div className="glow-rose blob absolute -left-40 -top-32 h-[40rem] w-[40rem]" />
-          <div
-            className="glow-sage blob absolute -bottom-40 -right-40 h-[36rem] w-[36rem]"
-            style={{ animationDelay: "-6s" }}
-          />
-          <div className="grain pointer-events-none absolute inset-0" />
+ return (
+  <PageShell>
+    <div className="page-enter">
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden spotlight pb-16 pt-16 md:pb-20 md:pt-24"
+      >
+        <div className="glow-rose blob absolute -left-40 -top-32 h-[40rem] w-[40rem]" />
+        <div
+          className="glow-sage blob absolute -bottom-40 -right-40 h-[36rem] w-[36rem]"
+          style={{ animationDelay: "-6s" }}
+        />
+        <div className="grain pointer-events-none absolute inset-0" />
 
-          <div className="relative mx-auto max-w-7xl px-6">
-            <div className="mb-8 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              <span className="h-px w-8 bg-current" />
-              Edition 02 · Sweden · Denmark · France · 2027
-            </div>
-
-            <h1 className="font-hero text-[clamp(3rem,9vw,9rem)] leading-[0.92] tracking-tighter">
-              <span className="gradient-text">Health</span>
-              <span className="font-light italic text-[color:var(--sage)]">×</span>
-              <span className="gradient-text">Her.</span>
-            </h1>
-
-            <div className="mt-10 grid items-end gap-10 md:grid-cols-12">
-              <p className="max-w-2xl text-xl leading-relaxed text-muted-foreground md:col-span-7 md:text-2xl">
-                An interdisciplinary femtech hackathon where{" "}
-                <em className="font-medium not-italic text-foreground">creativity outweighs coding</em>{" "}
-                — uniting students across Europe to close the gender health gap.
-              </p>
-              <div className="flex flex-col items-start gap-4 md:col-span-5 md:items-end">
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--plum)] px-7 py-4 text-sm uppercase tracking-[0.2em] text-[color:var(--blush)] transition-colors hover:bg-[color:var(--sage)]"
-                >
-                  Learn more
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
-                <Link to="/partners" className="text-sm text-muted-foreground ulink">
-                  Become a partner ↗
-                </Link>
-              </div>
-            </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mb-8 flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            <span className="h-px w-8 bg-current" />
           </div>
 
-          <div className="relative mx-auto mt-24 grid max-w-7xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-            {[
-              ["03", "Challenge tracks"],
-              ["06", "Weeks of innovation"],
-              ["6", "Host cities"],
-              ["3", "Countries"],
-            ].map(([n, l]) => (
-              <div key={l} className="border-t border-[color:var(--plum)]/20 pt-4">
-                <div className="font-hero text-5xl text-[color:var(--plum)]">{n}</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{l}</div>
-              </div>
-            ))}
+          <h1 className="hero-stagger mb-6" aria-label="HealthXHer">
+            <img 
+              src={wordmark}
+              alt="HealthXHer" 
+              className="h-20 w-auto object-contain md:h-28" 
+            />
+          </h1>
+
+
+          <div className="mt-10 grid items-end gap-10 md:grid-cols-12">
+            <p className="max-w-2xl text-xl leading-relaxed text-muted-foreground md:col-span-7 md:text-2xl">
+              An interdisciplinary femtech hackathon where{" "}
+              <em className="font-medium not-italic text-foreground">solutions outweighs coding</em>{" "}
+              — uniting students across Europe to close the gender health gap.
+            </p>
+            <div className="flex flex-col items-start gap-4 md:col-span-5 md:items-end">
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--plum)] px-7 py-4 text-sm uppercase tracking-[0.2em] text-[color:var(--blush)] transition-colors hover:bg-[color:var(--sage)]"
+              >
+                Learn more
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+              <Link
+                to="/partners"
+                className="group inline-flex items-center gap-3 rounded-full bg-[color:var(--plum)] px-7 py-4 text-sm uppercase tracking-[0.2em] text-[color:var(--blush)] transition-colors hover:bg-[color:var(--sage)]"
+              >
+                Become a partner ↗
+              </Link>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         <section className="overflow-hidden border-y border-[color:var(--plum)]/15 bg-[color:var(--blush)] py-6">
           <div className="marquee-track flex gap-16 whitespace-nowrap font-hero text-2xl text-[color:var(--plum)]">
@@ -134,7 +126,7 @@ function HomePage() {
           <div className="site-container grid gap-5 lg:grid-cols-[1.6fr_1fr]">
             <div className="motion-image-frame rounded-xl">
               <img
-                src={images.gallery03}
+                src={images.gallery13}
                 alt="HealthXHer participants collaborating during Edition 1"
                 className="h-full min-h-80 w-full object-cover grayscale"
               />
@@ -248,31 +240,52 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className="site-container">
-            <SectionIntro
-              centered
-              title="Stories, reflections and updates from the community."
-              copy="A preview of recent thinking, event reflections and community stories from HealthXHer."
-            />
-            <div className="mx-auto mt-12 max-w-xl">
-              <img
-                src={images.poster}
-                alt="Women's health research illustration"
-                className="aspect-[16/10] w-full object-cover"
-              />
-              <h3 className="mt-5 font-display text-2xl">PCOS Is More Complicated Than Its Name</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex.
-              </p>
-              <Button asChild variant="link" className="mt-3 px-0">
-                <Link to="/blog/pcos-is-more-complicated-than-its-name">
-                  Read more <ArrowRight />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+       <section className="py-24">
+  <div className="site-container">
+    <SectionIntro
+      centered
+      title="Stories, reflections and updates from the community."
+      copy="A preview of recent thinking, event reflections and community stories from HealthXHer."
+    />
+
+    {/* Grid wrapper — two columns on medium screens and up */}
+    <div className="mx-auto mt-12 grid max-w-4xl gap-10 md:grid-cols-2">
+      <div>
+        <img
+          src={images.poster}
+          alt="Women's health research illustration"
+          className="aspect-[16/10] w-full object-cover"
+        />
+        <h3 className="mt-5 font-display text-2xl">PCOS Is More Complicated Than Its Name</h3>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
+          PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex.
+        </p>
+        <Button asChild variant="link" className="mt-3 px-0">
+          <Link to="/blog/pcos-is-more-complicated-than-its-name">
+            Read more <ArrowRight />
+          </Link>
+        </Button>
+      </div>
+
+      <div>
+        <img
+          src={images["gallery01"]}
+          alt="Women's health research illustration"
+          className="aspect-[16/10] w-full object-cover"
+        />
+        <h3 className="mt-5 font-display text-2xl">Stay tuned!</h3>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
+          Next blog post coming soon!
+        </p>
+        <Button asChild variant="link" className="mt-3 px-0">
+          <Link to="/blog/pcos-is-more-complicated-than-its-name">
+            Read more <ArrowRight />
+          </Link>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section id="faq" className="soft-section scroll-mt-24 py-24">
           <div className="site-container">
