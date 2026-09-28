@@ -14,7 +14,7 @@ export const Route = createFileRoute("/blog/")({
 });
 
 const featuredPost = {
-  title: "PCOS Is More Complicated Than Its Name",
+  title: "PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME",
   excerpt:
     "PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex, and it doesn't look the same for everyone.",
   meta: "Text · Suzan Gumush  ·  4 min",

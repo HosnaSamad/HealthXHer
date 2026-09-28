@@ -256,7 +256,7 @@ function HomePage() {
           alt="Women's health research illustration"
           className="aspect-[16/10] w-full object-cover"
         />
-        <h3 className="mt-5 font-display text-2xl">PCOS Is More Complicated Than Its Name</h3>
+        <h3 className="mt-5 font-display text-2xl">PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME</h3>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">
           PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex.
         </p>
