@@ -10,43 +10,137 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ArchiveRouteImport } from './routes/archive'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as HackathonRouteImport } from './routes/hackathon'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ArchiveV1RouteImport } from './routes/archive.v1'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogPcosIsMoreComplicatedThanItsNameRouteImport } from './routes/blog.pcos-is-more-complicated-than-its-name'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArchiveV1Route = ArchiveV1RouteImport.update({
-  id: '/archive/v1',
-  path: '/archive/v1',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArchiveRoute = ArchiveRouteImport.update({
+  id: '/archive',
+  path: '/archive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HackathonRoute = HackathonRouteImport.update({
+  id: '/hackathon',
+  path: '/hackathon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchiveV1Route = ArchiveV1RouteImport.update({
+  id: '/v1',
+  path: '/v1',
+  getParentRoute: () => ArchiveRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogPcosIsMoreComplicatedThanItsNameRoute =
+  BlogPcosIsMoreComplicatedThanItsNameRouteImport.update({
+    id: '/pcos-is-more-complicated-than-its-name',
+    path: '/pcos-is-more-complicated-than-its-name',
+    getParentRoute: () => BlogRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/archive': typeof ArchiveRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
+  '/hackathon': typeof HackathonRoute
+  '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/archive': typeof ArchiveRouteWithChildren
+  '/hackathon': typeof HackathonRoute
+  '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/archive': typeof ArchiveRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
+  '/hackathon': typeof HackathonRoute
+  '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/archive/v1'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/archive'
+    | '/blog'
+    | '/hackathon'
+    | '/partners'
+    | '/archive/v1'
+    | '/blog/pcos-is-more-complicated-than-its-name'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/archive/v1'
-  id: '__root__' | '/' | '/archive/v1'
+  to:
+    | '/'
+    | '/about'
+    | '/archive'
+    | '/hackathon'
+    | '/partners'
+    | '/archive/v1'
+    | '/blog/pcos-is-more-complicated-than-its-name'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/archive'
+    | '/blog'
+    | '/hackathon'
+    | '/partners'
+    | '/archive/v1'
+    | '/blog/pcos-is-more-complicated-than-its-name'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ArchiveV1Route: typeof ArchiveV1Route
+  AboutRoute: typeof AboutRoute
+  ArchiveRoute: typeof ArchiveRouteWithChildren
+  BlogRoute: typeof BlogRouteWithChildren
+  HackathonRoute: typeof HackathonRoute
+  PartnersRoute: typeof PartnersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,19 +152,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/archive': {
+      id: '/archive'
+      path: '/archive'
+      fullPath: '/archive'
+      preLoaderRoute: typeof ArchiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hackathon': {
+      id: '/hackathon'
+      path: '/hackathon'
+      fullPath: '/hackathon'
+      preLoaderRoute: typeof HackathonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/archive/v1': {
       id: '/archive/v1'
-      path: '/archive/v1'
+      path: '/v1'
       fullPath: '/archive/v1'
       preLoaderRoute: typeof ArchiveV1RouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ArchiveRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/pcos-is-more-complicated-than-its-name': {
+      id: '/blog/pcos-is-more-complicated-than-its-name'
+      path: '/pcos-is-more-complicated-than-its-name'
+      fullPath: '/blog/pcos-is-more-complicated-than-its-name'
+      preLoaderRoute: typeof BlogPcosIsMoreComplicatedThanItsNameRouteImport
+      parentRoute: typeof BlogRoute
     }
   }
 }
 
+interface ArchiveRouteChildren {
+  ArchiveV1Route: typeof ArchiveV1Route
+}
+
+const ArchiveRouteChildren: ArchiveRouteChildren = {
+  ArchiveV1Route: ArchiveV1Route,
+}
+
+const ArchiveRouteWithChildren =
+  ArchiveRoute._addFileChildren(ArchiveRouteChildren)
+
+interface BlogRouteChildren {
+  BlogPcosIsMoreComplicatedThanItsNameRoute: typeof BlogPcosIsMoreComplicatedThanItsNameRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogPcosIsMoreComplicatedThanItsNameRoute:
+    BlogPcosIsMoreComplicatedThanItsNameRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ArchiveV1Route: ArchiveV1Route,
+  AboutRoute: AboutRoute,
+  ArchiveRoute: ArchiveRouteWithChildren,
+  BlogRoute: BlogRouteWithChildren,
+  HackathonRoute: HackathonRoute,
+  PartnersRoute: PartnersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

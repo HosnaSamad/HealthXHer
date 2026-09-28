@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthXHer: Innovating Female Health</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Font: Montserrat from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- Header & Persistent Navigation (Sticky to the top) -->
+    <header id="main-header" class="sticky top-0 z-50 transition-shadow duration-300 bg-dark"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-primary-light cursor-pointer tracking-wider" onclick="showPage('home')">HealthXHer</h1>
+
+            <nav id="desktop-nav" class="hidden md:flex space-x-6 text-gray-300 font-medium text-sm">
+                <!--<a href="#home" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="home">Dashboard</a>-->
+                <a href="#about-more" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="about-more">About</a>
+                <a href="#challenges" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="challenges">Tracks</a>
+                <a href="#schedule" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="schedule">Full Schedule</a>
+                <a href="#prizes" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="prizes">Prizes</a>
+                <a href="#people" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="people">Our Team & Experts</a>
+              <!--  <a href="#submission" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="submission">Submission</a>-->
+                <a href="#faq" class="nav-link hover:text-primary-light transition duration-150 p-2 rounded-lg" data-page="faq">FAQ</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                 <button id="menu-button" class="md:hidden text-primary-light text-3xl font-extrabold p-2 focus:outline-none">
+                     <span id="open-icon">☰</span>
+                     <span id="close-icon" class="hidden">✕</span>
+                 </button>
+                 <a href="#register" class="bg-primary text-white px-4 py-2 md:px-5 md:py-2 rounded-full font-bold hover:bg-primary-light transition duration-300 shadow-lg nav-link text-xs md:text-sm hidden sm:inline-block" data-page="register">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav id="mobile-menu" class="fixed top-[68px] left-0 w-full bg-content-light z-40 p-4 shadow-xl md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col space-y-2 text-gray-300 font-medium">
+           <!-- <a href="#home" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="home">Dashboard</a>-->
+            <a href="#about-more" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="about-more">About</a>
+            <a href="#challenges" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="challenges">Tracks</a>
+            <a href="#schedule" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="schedule">Full Schedule</a>
+            <a href="#prizes" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="prizes">Prizes</a>
+            <a href="#people" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="people">Our Team & Experts</a>
+           <!-- <a href="#submission" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="submission">Submission</a>-->
+            <a href="#faq" class="nav-link text-lg hover:text-primary-light transition duration-150 p-3 block rounded-lg text-center border-b border-primary" data-page="faq">FAQ</a>
+        </div>
+        <a href="#register" class="mt-4 w-full text-center block bg-primary-light text-white px-5 py-3 rounded-full font-bold hover:bg-primary transition duration-300 shadow-lg nav-link text-lg" data-page="register">
+             Register Now
+         </a>
+    </nav>
+
+  <!-- Main Content Area (Container for all pages/sections) -->
+    <main id="main-content" class="min-h-screen pt-1"> 
+
+        <!-- 1. Home / Dashboard (Expanded Summary Page) -->
+        <section id="home" class="page-content active">
+            <!-- Hero Section with Opaque Background Image -->
+            <div class="hero-section py-20 md:py-32 overflow-hidden relative shadow-inner">
+
+                <!-- Background Image Layer: Absolutely positioned and low opacity -->
+                <img src='healthxher_poster.png' class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
+                <!-- Subtle Texture Layer (for visual depth) -->
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 animate-intro">
+                    <h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-white">
+                        HealthXHer
+                    </h2>
+                
+                    </h3>
+                    <p class="text-xl md:text-2xl opacity-90 max-w-5xl mx-auto mb-10 font-medium italic text-light">
+                        An interdisciplinary hackathon where creativity outweighs coding, uniting all backgrounds to tackle critical challenges in women’s health.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#register" onclick="showPage('register')" class="bg-primary-light text-white px-8 py-3 rounded-full font-bold text-lg hover:opacity-90 transition duration-300 shadow-xl inline-block">
+                            Register Your Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Us Section Summarised -->
+            <div class="py-16 md:py-20 bg-content-light">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h3 class="text-4xl font-extrabold mb-6 text-primary-light">
+                        Our Mission
+                    </h3>
+                    <div class="max-w-4xl mx-auto p-8 rounded-xl shadow-2xl bg-dark">
+                        <p class="text-lg text-gray-200 mb-6">
+                            HealthXHer is an inclusive, interdisciplinary hackathon that brings together students from a wide range of academic backgrounds, 
+                            including life sciences, healthcare, economics, policy and management, data science, and AI. 
+                            By uniting diverse perspectives and skill sets, the event aims to address the gender health gap in clinical research 
+                            and tackle challenges that disproportionately affect women in healthcare.
+                        </p>
+                        
+                        <p class="text-lg text-gray-300 mb-6">
+                            The hackathon connects talented students from across Sweden with AstraZeneca, supporting their professional growth as early talent 
+                            while increasing awareness of career opportunities within the life sciences industry.
+                        </p>
+                        
+                        <p class="text-lg text-gray-200 mb-8">
+                            Beyond innovation, HealthXHer seeks to raise awareness of the vital role the life sciences play in society. 
+                            Through mentorship, collaboration, and hands-on problem-solving, participants are empowered to co-create impactful, 
+                            real-world solutions and contribute to a more equitable healthcare future.
+                        </p>
+                        <!-- CTA to scroll down to the team section -->
+                        <a href="#about-more" onclick="showPage('about-more')" class="text-lg font-bold px-6 py-2 rounded-full border-2 hover:bg-primary-light transition duration-300 text-primary-light border-primary-light">
+                        Learn more about us →
+                        </a>    
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Summary Content: Tracks/Challenges -->
+            <div class="py-16 md:py-20 bg-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h3 class="text-4xl font-extrabold text-center mb-12 text-primary-light">
+                        CHALLENGE TRACKS
+                    </h3>
+                    <!-- Grid for 4 Columns on desktop, stacked on mobile -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 challenge-grid-3-col">
+                        
+                        <!-- Track 2 Summary -->
+                        <div class="content-card p-5 rounded-xl shadow-2xl border-b-4 bg-content-light border-primary">
+                             <span class="text-3xl block mb-2 text-accent-light"></span>
+                            <h4 class="text-xl font-bold mb-2 text-gray-100">Oncology Safety</h4>
+                            <p class="text-gray-300 mb-4 text-sm">Redefine early detection algorithms for sex-specific adverse events in cancer treatment.</p>
+                             <a href="#challenges" onclick="showPage('challenges')" class="text-primary-light hover:text-white font-semibold text-xs transition duration-150">View Details →</a>
+                        </div>
+
+                        <!-- Track 2 Summary -->
+                        <div class="content-card p-5 rounded-xl shadow-2xl border-b-4 bg-content-light border-primary">
+                             <span class="text-3xl block mb-2 text-accent-light"></span>
+                            <h4 class="text-xl font-bold mb-2 text-gray-100">Cancer Screening</h4>
+                            <p class="text-gray-300 mb-4 text-sm">Enhance screening access and education to reduce inequities in early detection for women..</p>
+                             <a href="#challenges" onclick="showPage('challenges')" class="text-primary-light hover:text-white font-semibold text-xs transition duration-150">View Details →</a>
+                        </div>
+                        
+                        <!-- Track 4 Summary -->
+                        <div class="content-card p-5 rounded-xl shadow-2xl border-b-4 bg-content-light border-primary">
+                             <span class="text-3xl block mb-2 text-accent-light"></span>
+                            <h4 class="text-xl font-bold mb-2 text-gray-100">Autoimmune Management</h4>
+                            <p class="text-gray-300 mb-4 text-sm">Streamline diagnosis and management of autoimmune diseases with personalized care models.</p>
+                             <a href="#challenges" onclick="showPage('challenges')" class="text-primary-light hover:text-white font-semibold text-xs transition duration-150">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Content: Schedule & Timeline -->
+            <div class="py-16 md:py-20 bg-content-light">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h3 class="text-4xl font-extrabold text-center mb-12 text-primary-light">
+                        KEY EVENT DATES
+                    </h3>
+                    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="p-4 content-card rounded-xl shadow-lg bg-neutral-card">
+                            <p class="font-bold text-lg text-dark-text">Applications Open</p>
+                            <p class="text-sm text-dark-text">January 19th</p>
+                        </div>
+                        <div class="p-4 content-card rounded-xl shadow-lg bg-neutral-card">
+                            <p class="font-bold text-lg text-dark-text">Kick-off</p>
+                            <p class="text-sm text-dark-text">9th February</p>
+                        </div>
+                        <div class="p-4 content-card rounded-xl shadow-lg bg-neutral-card">
+                            <p class="font-bold text-lg text-dark-text">Semi-Finals</p>
+                            <p class="text-sm text-dark-text">2nd March</p>
+                        </div>
+                        <div class="p-4 content-card rounded-xl shadow-lg bg-neutral-card">
+                            <p class="font-bold text-lg text-dark-text">Grand Final</p>
+                            <p class="text-sm text-dark-text">13th March</p>
+                        </div>
+                    </div>
+                     <div class="text-center mt-10">
+                        <a href="#schedule" onclick="showPage('schedule')" class="border-2 text-primary-light px-6 py-2 rounded-full font-bold hover:bg-primary-light hover:text-white transition duration-300 inline-block border-primary-light">
+                            View Full Schedule →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+           <!-- 3. Redesigned Prizes & Perks -->
+            <div class="py-16 md:py-24 bg-dark">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h3 class="text-4xl font-black text-center mb-16 text-primary-light tracking-tight uppercase">
+                        Perks for All Participants
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🎓</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Certification</h4>
+                            <p class="text-gray-400 text-sm">Official participation certificate from AstraZeneca professionals.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">💬</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Expert Feedback</h4>
+                            <p class="text-gray-400 text-sm">Direct project critique from industry leaders to boost your career.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🤝</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Networking</h4>
+                            <p class="text-gray-400 text-sm">Connect with professionals and students from top universities.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🛠️</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Workshops</h4>
+                            <p class="text-gray-400 text-sm">Exclusive hands-on training sessions with industry experts.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 border-primary-light bg-primary/10 group">
+                            <span class="text-4xl mb-4 block glow-accent">💎</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">All-Inclusive</h4>
+                            <p class="text-gray-400 text-sm">Fully paid expenses for travel and accommodation during finals.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="#prizes" onclick="showPage('prizes')" class="border-2 border-primary-light text-primary-light px-8 py-3 rounded-full font-bold hover:bg-primary-light hover:text-dark transition duration-300 inline-block">
+                            See All Perks →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div class="py-12 text-center bg-primary">
+                <h4 class="text-3xl font-extrabold mb-4 text-white">Ready to Innovate?</h4>
+                <a href="#register" onclick="showPage('register')" class="bg-primary-light text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition duration-300 shadow-xl inline-block">
+                    Secure Your Team's Spot Now
+                </a>
+            </div>
+
+            <!-- AZ sponsor carousel--> 
+            <img src="AZ_SPONSORED.png" alt="AstraZeneca Sponsor" class="w-60 absolute animate-slide-x" />
+            
+        </section>
+
+          <!-- About Us Section - More Details -->
+            <section id="about-more" class="page-content">
+                <div class="max-w-6xl mx-auto px-6 py-20 space-y-16">
+
+                    <!-- Page Title -->
+                    <div class="text-center">
+                        <h2 class="text-5xl font-extrabold text-primary-light mb-6">
+                            About HealthXHer
+                        </h2>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                            An interdisciplinary hackathon dedicated to closing the gender health gap
+                            and shaping the future of women’s health.
+                        </p>
+                    </div>
+
+                    <!-- Hackathon Objective -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            Hackathon Objective
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            HealthXHer is dedicated to fostering an inclusive and diverse environment,
+                            welcoming participants from a wide spectrum of academic and professional
+                            backgrounds. These include Life Sciences, Healthcare, Economics, Policy and
+                            Management, Data Science, Artificial Intelligence, and beyond.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            Our vision is to unite a rich mix of perspectives and expertise around a
+                            shared mission: addressing and reducing the gender health gap in clinical
+                            trials and tackling healthcare challenges uniquely faced by women.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            The event connects talented students from across Sweden with AstraZeneca,
+                            supporting their professional development as early talent and increasing
+                            awareness of career opportunities within the company.
+                        </p>
+                    </div>
+
+                    <!-- Participant Experience -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            The HealthXHer Experience
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            HealthXHer is designed to be more than a hackathon. Participants benefit
+                            from a multifaceted experience that combines mentorship, collaboration,
+                            and professional exposure.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            Throughout the event, participants gain access to experienced mentors,
+                            expand their professional networks, and collaborate with peers from
+                            diverse disciplines. This collaborative environment is key to co-creating
+                            innovative, impactful solutions.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            A core part of our mission is also to raise public awareness of the life
+                            sciences industry, highlighting its importance and societal impact.
+                        </p>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            What Participants Gain
+                        </h3>
+                        <ul class="list-disc list-inside text-lg text-gray-200 space-y-3">
+                            <li>Showcase your talent to a leading organization such as AstraZeneca</li>
+                            <li>Learn from professionals working in Clinical Trials, AI, Life Sciences, LLMs, HR, and Recruitment</li>
+                            <li>Expand your professional and academic network</li>
+                            <li>Participate in workshops on clinical trials, career development, AI, and women’s health</li>
+                            <li>Apply your skills in a truly interdisciplinary setting</li>
+                            <li>Contribute to the discussion around the gender health gap and raise awareness</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mentorship -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            Mentorship Structure
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            Throughout the hackathon, participants have access to both general and
+                            specialized mentors.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            <strong>General mentors</strong> are available to all teams via Slack to
+                            answer quick questions and provide guidance.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            <strong>Specialized mentors</strong> are assigned to finalist teams in the
+                            week leading up to the finals, offering deeper technical, strategic, and
+                            presentation support.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            Mentors bring expertise across healthcare, AI, digital health, public
+                            policy, design thinking, entrepreneurship, and communication.
+                        </p>
+                    </div>
+
+                    <!-- Teams & Submissions -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            Teams & Submissions
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            Team placement is first-come, first-served. For each participating
+                            university, the first five teams submitting a complete and correct
+                            application will be accepted.
+                        </p>
+                        <p class="text-lg text-gray-200">
+                            Submission guidelines are detailed in the Participants Guide, which is
+                            accessible exclusively to registered participants.
+                        </p>
+                    </div>
+
+                    <!-- IP -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            Intellectual Property
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            Participants retain full ownership of their background knowledge and all
+                            intellectual property developed during HealthXHer. HealthXHer does not
+                            claim ownership over any participant-developed projects.
+                        </p>
+                    </div>
+
+                    <!-- Media -->
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-white">
+                            Media Recording & Usage
+                        </h3>
+                        <p class="text-lg text-gray-200">
+                            Photos, video, and audio recordings may be taken during the event. By
+                            participating, you consent to the use of these materials for follow-up
+                            activities and future promotional purposes. Participants may contact the
+                            organizers in advance with any concerns.
+                        </p>
+                    </div>
+
+                    <!-- Final Info -->
+                    <div class="space-y-6 text-center">
+                        <p class="text-lg text-gray-300">
+                            Winners will be announced during the National Finals on <strong>13th March 2026</strong>.
+                        </p>
+                        <p class="text-lg text-gray-300">
+                            Contact: <a href="mailto:healthxher@gmail.com" class="underline text-primary-light">
+                                healthxher@gmail.com
+                            </a>
+                        </p>
+
+                        <button
+                            onclick="showPage('home')"
+                            class="mt-8 text-primary-light underline text-lg">
+                            ← Back to Home
+                        </button>
+                    </div>
+                </div>
+         </section>
+
+
+
+        <!-- 2. Tracks / Challenges + Judging Criteria Page (Full Detail) -->
+        <section id="challenges" class="page-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <h3 class="text-5xl font-extrabold text-center mb-4 text-primary-light">
+                    The Challenge Tracks
+                </h3>
+                <p class="text-xl text-center text-gray-300 mb-16 max-w-4xl mx-auto">
+                   Below are the three overarching challenge tracks for this year’s Hackathon, designed by our Campus Ambassadors. 
+                    For detailed context, objectives, and judging criteria for each track, please read 
+                    <a href="https://drive.google.com/file/d/151Pgqarl8WdRgvL0fUqm2VB8mjPF78Cl/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-primary-light underline font-semibold">
+                        The Participation Guide
+                    </a>
+                </p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <!-- Challenge 1 Detail-->
+                    <div class="content-card p-8 rounded-xl shadow-2xl border-t-8 bg-content-light border-accent-light">
+                        <h4 class="text-3xl font-bold mb-3 text-white">Oncology safety: early detection of sex-specific adverse events</h4>
+                        <p class="text-gray-300 mb-4 font-semibold">Did you know women undergoing oncology treatments face a staggering 34% higher risk of adverse events (AEs) compared to men? 
+                            From debilitating nausea and fatigue to critical hematologic issues like anemia, these sex-specific toxicities can significantly impact treatment effectiveness and quality of life. 
+                            Biological factors, drug pharmacokinetics, and immune responses all play a role, creating an urgent need for tailored solutions.</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
+                            <li><span class="font-bold">Your Mission:</span> We're calling on innovators to design groundbreaking solutions that advance the detection, 
+                                monitoring, and management of oncology adverse events, with deep respect and consideration for sex-specific differences.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Challenge 2 Detail -->
+                    <div class="content-card p-8 rounded-xl shadow-2xl border-t-8 bg-content-light border-accent-light">
+                        <h4 class="text-3xl font-bold mb-3 text-white">Innovating in Cancer Screening and Early Detection for Women</h4>
+                        <p class="text-gray-300 mb-4 font-semibold">One million women die each year from breast, endometrial, and ovarian cancer—many deaths are preventable with early detection. 
+                            Yet routine screenings are often missed due to fear of results, low awareness, misinformation, anxiety, procedural discomfort, cultural barriers, and limited access. 
+                            These obstacles are magnified by socioeconomic status, age, and geography, creating stark disparities and leaving under‑screened groups behind.</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
+                            <li><span class="font-bold">Your mission:</span>  Design bold, practical strategies that boost screening and early detection by removing barriers and personalizing care. 
+                                Focus on a clear step in the pathway—outreach, risk personalisation, or access enablement—and deliver end‑to‑end impact.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Challenge 3 Detail -->
+                    <div class="content-card p-8 rounded-xl shadow-2xl border-t-8 bg-content-light border-accent-light">
+                        <h4 class="text-3xl font-bold mb-3 text-white">Improving Autoimmune Disease Diagnosis and Management in Women</h4>
+                        <p class="text-gray-300 mb-4 font-semibold">Women account for up to 80% of autoimmune disease cases, yet diagnosis is slow and fragmented. Symptoms—fatigue, joint/muscle pain, brain fog—overlap with other conditions, and specific tests are limited, leading to an average 4-year diagnostic delay and multiple consultations. 
+                            Care is often split across specialties, with under-recognition of fatigue, pain, and mental health impacts on quality of life.</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-300 text-sm">
+                            <li><span class="font-bold">Your mission:</span>  Develop solutions that streamline diagnosis and management for women with autoimmune diseases. 
+                                Aim for scalable, equity-focused concepts (low-tech or digital) that improve recognition, triage, and follow-up, and reduce the burden of symptoms on daily life.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Judging Criteria -->
+                <div class="mt-20 p-10 rounded-xl shadow-inner content-card bg-content-light">
+                    <h4 class="text-3xl font-bold text-center mb-8 text-primary-light">
+                        Judging Criteria
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">Problem Understanding & Relevance</p>
+                            <p class="text-sm text-gray-400">Demonstrate a clear and focused understanding of the selected challenge and the specific problem being addressed.</p>
+                        </div>
+                         <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">AI, Innovation & Creativity</p>
+                            <p class="text-sm text-gray-400">Present a novel, interdisciplinary solution that leverages creative thinking and adds value, 
+                                including responsible use of AI.</p>
+                        </div>
+                         <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">Feasibility & Practicality</p>
+                            <p class="text-sm text-gray-400">Ensure the solution is realistic and implementable with current tools, resources, and constraints.</p>
+                        </div>
+                         <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">Sustainability & Impact </p>
+                            <p class="text-sm text-gray-400">Show that the solution can have lasting, equitable, and meaningful effects on patients, communities, or healthcare systems.</p>
+                        </div>
+                         <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">Team Collaboration & Interdisciplinarity</p>
+                            <p class="text-sm text-gray-400">Work effectively as a team, leveraging diverse skills and perspectives to solve the challenge.</p>
+                        </div>
+                        <div class="p-4 rounded-lg shadow-md border-l-4 bg-dark border-primary-light">
+                            <p class="font-bold text-primary-light">Communication & Pitch</p>
+                            <p class="text-sm text-gray-400">Clarity, structure, and professional delivery of the final pitch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Prizes Page -->
+        <section id="prizes" class="page-content bg-content-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <h3 class="text-5xl font-extrabold text-center mb-16 text-primary-light">
+                    Prizes and Future Opportunities
+                </h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- 1st Place - Highlighted -->
+                    <div class="content-card text-white p-8 rounded-xl shadow-2xl transform scale-105 border-b-8 border-yellow-400 bg-primary">
+                        <h4 class="text-4xl font-extrabold mb-4 text-center text-yellow-400">
+                            🥇 Grand Winner
+                        </h4>
+                        <ul class="list-disc pl-5 space-y-3 text-lg text-light">
+                            <li>Opportunity to present your project to a relevant AZ department/team</li>
+                            <li>Personalized career roadmap session with an HR leader or senior director</li>
+                            <li>Exclusive behind-the-scenes lab/campus tour at an AZ R&D site</li>
+                            <li>Spotify recognition</li>
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement</li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- 2nd Place -->
+                    <div class="content-card p-8 rounded-xl shadow-xl border-b-8 border-gray-400 bg-dark">
+                        <h4 class="text-3xl font-extrabold text-primary-light mb-4 text-center">
+                            🥈 2nd Place
+                        </h4>
+                        <ul class="list-disc pl-5 space-y-3 text-lg text-light">
+                            <li>Spotify Podcast recognition</li>
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement</li>
+                            <li>AZ Gothenburg site tour.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3rd Place -->
+                    <div class="content-card p-8 rounded-xl shadow-xl border-b-8 border-yellow-700 bg-dark">
+                        <h4 class="text-3xl font-extrabold text-primary-light mb-4 text-center">
+                            🥉 3rd Place
+                        </h4>
+                       <ul class="list-disc pl-5 space-y-3 text-lg text-light">
+                            <li>Featured on AZ’s official digital platforms (internal & external)</li>
+                            <li>1-hour online mentoring session for project improvement.</li>
+                            <li>AZ Gothenburg site tour.</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 20px;"></div>
+                </div>
+
+
+                <div class="content-card p-8 rounded-xl shadow-xl border-b-8 border-yellow-700 bg-dark">
+                    <h3 class="text-4xl font-black text-center mb-8 text-primary-light tracking-tight uppercase">
+                        For All Participants
+                    </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🎓</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Certification</h4>
+                            <p class="text-gray-400 text-sm">Official participation certificate from AstraZeneca Campus Ambassadors.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">💬</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Expert Feedback</h4>
+                            <p class="text-gray-400 text-sm">Direct project critique from industry leaders to boost your project.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🤝</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Networking</h4>
+                            <p class="text-gray-400 text-sm">Connect with professionals and students from top universities.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 hover:border-primary-light/50 group">
+                            <span class="text-4xl mb-4 block glow-accent">🛠️</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">Workshops</h4>
+                            <p class="text-gray-400 text-sm">Exclusive Workshop sessions with industry experts.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 border-primary-light bg-primary/10 group">
+                            <span class="text-4xl mb-4 block glow-accent">💎</span>
+                            <h4 class="text-lg font-extrabold text-primary-light mb-2">All-Inclusive</h4>
+                            <p class="text-gray-400 text-sm">Fully paid expenses for catering and participation.</p>
+                        </div>
+                    </div>
+                    </div>
+        </section>
+            </div>
+        </section>
+
+        <!-- 4. Team & Experts Page -->
+        <section id="people" class="page-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <h3 class="text-5xl font-extrabold text-center mb-4 text-primary-light">
+                    Our Team
+                </h3>
+                <p class="text-xl text-center text-gray-300 mb-12 max-w-4xl mx-auto">
+                    We are a passionate group of students and professionals from diverse backgrounds, united by a single goal: driving innovation to close the gender health gap.
+                </p>
+
+                <h4 class="text-3xl font-bold text-primary-light mb-8 text-center border-b pb-2 border-primary-light">Executive Team</h4>
+                 <!-- To center the cards-->
+                <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <!-- Placeholder Cards for Organizing Team with implied LinkedIn Link -->
+                    <a href="https://www.linkedin.com/in/anita-nicoletti-1078b3200/" target="_blank" class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQG_kmUPN5XQUQ/profile-displayphoto-crop_800_800/B4DZj_mQnUGQAI-/0/1756634877727?e=1778716800&v=beta&t=wRthDMu22H69cuBLotmKBhh-LtzZegM5HlDr-gHAPns" alt="Ambassador 1 Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=A1'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-semibold text-gray-100">Anita Nicoletti</p>
+                        <i class="fa-brands fa-linkedin"></i> 
+                    </a>
+                     <a href="https://www.linkedin.com/in/hosna-samad/" target="_blank" class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+                        <img src="Hosna.png" alt="Ambassador 2 Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=A2'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-semibold text-gray-100">Hosna Samad</p>
+                        <i class="fa-brands fa-linkedin"></i> 
+                    </a>
+                    </div> 
+                     <div class="flex flex-wrap justify-center gap-6 mb-16">
+                    <a href="https://www.linkedin.com/in/millena-navega/" target="_blank" class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+                        <img src="Millena.png" alt="Ambassador 4 Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=A4'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-semibold text-gray-100">Millena Navega</p>
+                        <i class="fa-brands fa-linkedin"></i> 
+                    </a>
+                     <a href="https://www.linkedin.com/in/beatriznmcarvalho/" target="_blank" class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+                        <img src="Beatriz.png" alt="Ambassador 3 Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=A3'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-semibold text-gray-100">Beatriz Carvalho</p>
+                         <i class="fa-brands fa-linkedin"></i> 
+                    </a>
+                     <a href="https://www.linkedin.com/in/aayushi-patel-9988491b9/" target="_blank" class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+                        <img src="Aayushi.png" alt="Ambassador 5 Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=A5'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-semibold text-gray-100">Aayushi Patel</p>
+                        <i class="fa-brands fa-linkedin"></i> 
+                    </a>
+                 </div> 
+
+                <h4 class="text-3xl font-bold text-primary-light mb-8 text-center border-b pb-2 border-primary-light">Workshops</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="content-card text-center p-6 rounded-xl shadow-md border-l-4 bg-content-light border-primary-light"> 
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGkYJ6cxZFyLQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682869034467?e=1778716800&v=beta&t=zhpZTl0Y6DJ3-wIk9fI47aCaxoJezwmTdSgUa9HlRzI" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J6'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-bold text-lg text-gray-100">Petra Wedenmark</p>
+                        <p class="text-sm text-gray-400">CV Guide Talk</p>
+                    </div>
+                    <div class="content-card text-center p-6 rounded-xl shadow-md border-l-4 bg-content-light border-primary-light">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQFU9jfebaVpAg/profile-displayphoto-crop_800_800/B56ZlbPQuWJwAI-/0/1758172352296?e=1778716800&v=beta&t=Wg4Eq-9Z-Xvm1TGMT7D8eRfVw2OHZrgBHwMoJw2vLTw" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J6'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="font-bold text-lg text-gray-100">Per Hillertz</p>
+                        <p class="text-sm text-gray-400">AI and its impact on healthcare innovation</p>
+                    </div> 
+                    <div class="content-card text-center p-6 rounded-xl shadow-md border-l-4 bg-content-light border-primary-light">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFg6P7cPONoJA/profile-displayphoto-shrink_800_800/B4DZb8OJVLGkAc-/0/1747988289330?e=1778716800&v=beta&t=GCQh6ivz-C5Db8vKNVTnOdpY1Xs0_vywNYzmarXfgvE" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J6'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+                        <p class="https://media.licdn.com/dms/image/v2/D4D03AQFg6P7cPONoJA/profile-displayphoto-shrink_800_800/B4DZb8OJVLGkAc-/0/1747988289330?e=1778716800&v=beta&t=GCQh6ivz-C5Db8vKNVTnOdpY1Xs0_vywNYzmarXfgvE">Hanna Carlsson Kota</p>
+                        <p class="text-sm text-gray-400">Open Door Policies & Gender Mainstream</p>
+                    </div> 
+                </div> 
+                
+               <h4 class="text-3xl font-bold text-primary-light mb-8 text-center border-b pb-2 border-primary-light">Judges</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFg6P7cPONoJA/profile-displayphoto-shrink_800_800/B4DZb8OJVLGkAc-/0/1747988289330?e=1778716800&v=beta&t=GCQh6ivz-C5Db8vKNVTnOdpY1Xs0_vywNYzmarXfgvE" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J1'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Hanna Carlsson Kota</p>
+        <p class="text-sm text-gray-400">R&D Procurement Manager</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQESa-ZvROtjOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697709574588?e=1778716800&v=beta&t=dwrxNYS3F5E-bYNq5DQFwD5gqcE51VRZQ9woYDtCpcc" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J2'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Hyewon Nina Koo</p>
+        <p class="text-sm text-gray-400">Associate Director, Data Science & AI</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQFEvHDqlBaqmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1631191950806?e=1778716800&v=beta&t=VZLgp1DKP6TN5efc5thRCuAVp5la979IY00Hsa_sPvQ" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J3'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Elisabeth Dietze</p>
+        <p class="text-sm text-gray-400">Associate Principal Informatician</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHeIjp5P4YwtA/profile-displayphoto-shrink_800_800/B4EZd6CEUTHgAk-/0/1750099052327?e=1778716800&v=beta&t=maveOSyV0S_hig6KdwspO6RMS1KQK7-tO_dfiTAsQ4s" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J4'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Camille Riff</p>
+        <p class="text-sm text-gray-400">Medical Affairs Lead</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C5103AQGWwXhmTvB_CQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516860282518?e=1778716800&v=beta&t=js7ps2A459Y0YcN_qR6sqV6J3p-_iv2tkIqxbw9qVjQ" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J5'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Melanie Hendrix</p>
+        <p class="text-sm text-gray-400">Associate Director Clinical Regulatory Writing</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C4D03AQE_CnDx3VXHVg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1596611090573?e=1778716800&v=beta&t=z_hNDks--w7Co_3SyqlyyGQUSNZ5I_g_u1yeIMIVNYI" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J6'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Cecilia Borestrom</p>
+        <p class="text-sm text-gray-400">Director, Discovery Sciences</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQFqYQQx7Ogyug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600155406087?e=1778716800&v=beta&t=MlyS46VSFFE_fxyVNq3Ox5BIU_a8wowh8vvycvSUVZw" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J7'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Michalis Fardis</p>
+        <p class="text-sm text-gray-400">Medical Informatics</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C4D03AQEERdv294EZyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651775017392?e=1778716800&v=beta&t=WwL1aV58uWb36iCOMFoqRO9R3qvREKub3yb1fn_Rju4" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J8'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Åsa Lothigius</p>
+        <p class="text-sm text-gray-400">Regional Learning & Development Director</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQGlyzJwoUXkUA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1614941046355?e=1778716800&v=beta&t=yCbsXygM5bmIGnhmRyaYU_E1KZoFbc-CsI-cdDvbfJU" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J9'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Margherita Francescatto</p>
+        <p class="text-sm text-gray-400">Senior Scientist</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://placehold.co/100x100/c84877/ffffff?text=J10" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J10'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Catherine Bell</p>
+        <p class="text-sm text-gray-400">Associate Director Safety Sciences, CPSS</p>
+    </div>
+    
+    <div class="content-card text-center p-4 rounded-xl shadow-md border-t-4 hover:opacity-90 transition duration-300 bg-content-light border-accent-light">
+        <img src="https://placehold.co/100x100/c84877/ffffff?text=J11" alt="Jury Member Placeholder" onerror="this.src='https://placehold.co/100x100/c84877/ffffff?text=J11'" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-primary-light">
+        <p class="font-semibold text-gray-100">Cassandra Nan</p>
+        <p class="text-sm text-gray-400">Director, CVRM Evidence Strategy</p>
+    </div>
+
+</div>
+                </div> 
+            </div>
+        </section>
+
+        <!-- 5. Schedule + Workshops Page (Detailed Agenda and Timeline) -->
+        <section id="schedule" class="page-content bg-content-light">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <h3 class="text-5xl font-extrabold text-center mb-4 text-primary-light">
+                    Full Event Schedule
+                <div class="timeline-container">
+                    <div class="timeline-line hidden md:block bg-primary"></div>
+                    
+                    <!-- Phase 1: Registration (week 2 Jan) -->
+                    <div class="timeline-event flex md:justify-start justify-center left-event">
+                        <div class="md:w-1/2 md:pr-8 md:text-right w-full text-center">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-r-4 bg-neutral-card border-primary">
+                                <p class="text-sm font-semibold text-accent-light">Phase 1: Applications Open</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">19th January</h4>
+                                <p class="text-dark-text text-sm">Applications open. Emails sent to selected participants the following week.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 2: Kick-off (Week 1, Feb) -->
+                    <div class="timeline-event flex md:justify-end justify-center right-event">
+                        <div class="md:w-1/2 md:pl-8 w-full text-center md:text-left">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-l-4 bg-neutral-card border-primary-light">
+                                <p class="text-sm font-semibold text-accent-light">Phase 2: Virtual Kick-off</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">9th February</h4>
+                                <p class="text-dark-text text-sm">Introduction to the Hackathon and team formations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 3: Hacking & Workshops (Weeks 2-3, Feb/Mar) -->
+                    <div class="timeline-event flex md:justify-start justify-center left-event">
+                        <div class="md:w-1/2 md:pr-8 md:text-right w-full text-center">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-r-4 bg-neutral-card border-primary">
+                                <p class="text-sm font-semibold text-accent-light">Phase 3: Project Development</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">9th-22nd February</h4>
+                                <p class="text-dark-text text-sm">Work on the chosen challenge with your team. Semi-final submissions due 22nd February</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 4: Submission & Semi-Finals (Week 4, Feb/Mar) -->
+                    <div class="timeline-event flex md:justify-end justify-center right-event">
+                        <div class="md:w-1/2 md:pl-8 w-full text-center md:text-left">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-l-4 bg-neutral-card border-primary-light">
+                                <p class="text-sm font-semibold text-accent-light">Phase 4: Semi-Finals</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">2nd March | Lund, Gothenburg, Stockholm</h4>
+                                <p class="text-dark-text text-sm">Teams attend in-person pitching in their city. Juries select 6 Finalist Teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 5: Finals preperations -->
+                    <div class="timeline-event flex md:justify-start justify-center left-event">
+                        <div class="md:w-1/2 md:pr-8 md:text-right w-full text-center">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-r-4 bg-neutral-card border-primary">
+                                <p class="text-sm font-semibold text-accent-light">Phase 5: Finals Preparations</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">3rd-8th March </h4>
+                                <p class="text-dark-text text-sm">Finalist teams work on their final project with a mentor.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Phase 6: Grand Final (Final Week) -->
+                    <div class="timeline-event flex md:justify-end justify-center right-event">
+                        <div class="md:w-1/2 md:pl-8 w-full text-center md:text-left">
+                            <div class="content-card p-5 rounded-xl shadow-lg border-l-4 bg-neutral-card border-primary-light">
+                                <p class="text-sm font-semibold text-accent-light">Phase 6: Grand Finale</p>
+                                <h4 class="text-xl font-bold text-dark-text mt-1">13th March | AZ Gothenburg Site</h4>
+                                <p class="text-dark-text text-sm">Finalist teams pitches their final presentations where winners are announced.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+       <!-- 6. FAQ + Rules Page -->
+        <section id="faq" class="page-content">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                 <h3 class="text-5xl font-extrabold text-center mb-4 text-primary-light">
+                    FAQ & Official Rules
+                </h3>
+                <p class="text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                   Below are answers to some of the most frequently asked questions. 
+                   For a complete overview of the Hackathon—including rules, regulations, and expectations—we have prepared a comprehensive guide, for both participants and judges/mentors. 
+                   We strongly encourage you to read the full guide before applying to ensure a thorough understanding of the event
+                </p>
+
+                <div class="mt-16 text-center content-card">
+                    <a href="https://drive.google.com/file/d/151Pgqarl8WdRgvL0fUqm2VB8mjPF78Cl/view?usp=sharing" target="_blank" class="bg-primary-light text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary transition duration-300 shadow-xl inline-block spacing-x-2">
+                        View Full Participation Guide
+                    </a>
+                </div>
+             <div class="mt-16 text-center content-card">
+                    <a href="https://drive.google.com/file/d/1SoQaSADJKnc7Sl7B9MW8ES0cE1gubSeJ/view?usp=sharing" target="_blank" class="bg-primary-light text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary transition duration-300 shadow-xl inline-block spacing-x-2">
+                        View Full Judge/Mentor Guide
+                    </a>
+                </div>
+
+                <div class="space-y-8 mt-16">
+                    <!-- FAQ/Rule Item -->
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">Why should I join?</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            Participating in HealthXHer offers a unique opportunity to collaborate with diverse talents, gain hands-on experience in addressing real-world female health challenges, and showcase your skills to industry leaders.
+                            You'll have access to mentorship from experts, networking opportunities, and the chance to win exciting prizes that can further your career. Most importantly, you'll contribute to meaningful solutions that can positively impact female health outcomes.
+                            Check out our <a href="#prizes" class="text-accent-light underline">Prizes</a> and <a href="#people" class="text-accent-light underline">Mentors & Jury</a> sections for more details!
+                        </p>
+                    </div>
+
+                     <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">Mandatory Team Size</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            All teams must consist of <strong>exactly 4 participants</strong>. We require teams to be multidisciplinary to ensure robust solutions for the complex tracks.
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">Selection Criteria</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            Teams are accepted on a <strong>first-come, first-served basis</strong>. You are expected to register individually, however there is no restriction on forming teams with friends or colleagues, 
+                            make sure all members register separately in order to secure your team. If you register without a team, or half a team,  
+                            we'll match you into teams on Slack.
+
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">How are the teams formed and matched?</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            Post-kickoff, everyone will be required to post a short bio on Slack. Those who already have a team can create a private channel for their team, whilst we will help match individuals without a team into groups of 4 based on skills and interests.
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">In-Person Commitment</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                             The kick off and the first project weeks will be held online, teams are free to meet up in person to work on their projects. 
+                            However, the <strong>Semi-Finals</strong> (Lund/Gothenburg/Stockholm) and the <strong>Grand Final</strong> (AZ Gothenburg) are mandatory physical events. Travel assistance will be provided to finalists.
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">What universities are involved in HealthXHer</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            We are collaborating with top universities across Sweden including Lund University, Gothenburg University, Chalmers University of Technology, Stockholm University, KTH Royal Institute of Technology, and Karolinska Institute. 
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">Will there be mentors or professionals for guidance?</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            Yes, throughout the hackathon, teams will have access to a panel of mentors and industry experts from AstraZeneca and partner organizations. They will provide guidance, feedback, and support to help teams refine their ideas and solutions.
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">What is the final deliverable?</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            The final deliverable will be a working prototype or solution that teams have developed during the hackathon. This could include a functional app, a detailed design document, or a comprehensive report outlining their approach and findings. 
+                            However, teams do not need fully working prototype, concept-stage solutions are also acceptable as long as they effectively address the challenge.
+                        </p>
+                    </div>
+
+                    <div class="content-card p-6 rounded-xl shadow-lg border-l-4 bg-content-light border-primary-light cursor-pointer faq-item">
+                        <h4 class="font-bold text-xl text-primary-light mb-2">Intellectual Property and Data Privacy</h4>
+                        <p class="text-gray-300 faq-content hidden">
+                            All intellectual property rights in the deliverables created during the hackathon will remain with the respective teams. 
+                            However, teams are encouraged to share their work openly and contribute to the broader community. 
+                            Data privacy will be handled in accordance  with GDPR and other applicable data protection laws, 
+                            all data will be securely deleted within 30 days after the finals on 13th March. 
+                            Participants may access, correct, or request deletion of their data during the event, 
+                            and all information is stored on secure, access-controlled platforms and never used for purposes beyond administering the Hackathon.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center content-card">
+                    <h4 class="text-2xl font-bold text-primary-light mb-4">How to Join the Community</h4>
+                    <a href="https://mock-slack-invite.com" target="_blank" class="bg-primary-light text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary transition duration-300 shadow-xl">
+                        Click Here to Join the Official Slack Channel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Registration Page -->
+        <section id="register" class="page-content bg-primary text-light">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center content-card">
+                <h3 class="text-5xl font-extrabold mb-4 text-light">
+                    Team Registration
+                </h3>
+                <p class="text-xl opacity-80 mb-8 text-light">
+                    Register your team of 4 today. Selection is first-come, first-served!
+                </p>
+
+                <!-- Embedded Google Form -->
+                <div class="bg-neutral-card p-6 rounded-xl shadow-2xl">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSd-Uj5uS-Y13sXULeS0Ukvf1T4H6N5N1hk6HuTYWE4YFRNeMw/viewform?usp=publish-editor" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        class="rounded-xl"
+                    >
+                        Loading…
+                    </iframe>
+                </div>
+
+                <p class="text-sm opacity-70 mt-6 text-light">
+                    Note: Applications open in late January.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 8. Project Submission Page 
+        <section id="submission" class="page-content bg-primary text-light">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center content-card">
+                <h3 class="text-5xl font-extrabold mb-4 text-light">
+                    Project Submission Portal
+                </h3>
+                <p class="text-xl opacity-80 mb-8 text-light">
+                    All teams must submit their final project deliverables using the official **EightFold.ai** platform before the deadline for both the Semi-Finals and Grand Final.
+                </p>
+                <a href="https://eighfold.ai/healthxher-submission" target="_blank" class="bg-primary-light text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-primary transition duration-300 shadow-xl border-4 border-dark">
+                    Submit Project via EightFold.ai
+                </a>
+                <p class="text-sm opacity-70 mt-6 text-light">
+                    Submission Link is active up until the deadline of Feb/Mar Week 4.
+                </p>
+            </div>
+        </section>
+        -->
+    </main>
+    
+    <!-- Footer / Contact -->
+    <footer id="footer" class="py-12 bg-dark">
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h5 class="text-xl font-bold mb-4 text-primary-light">HealthXHer</h5>
+                    <p class="text-gray-400 text-sm">For Women's Health & Equity.</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-semibold mb-4 text-gray-300">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#challenges" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="challenges">Challenge Tracks</a></li>
+                        <li><a href="#schedule" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="schedule">Full Agenda</a></li>
+                        <li><a href="#people" class="nav-link text-gray-400 hover:text-primary-light transition duration-150" data-page="people">Our Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xl font-semibold mb-4 text-gray-300">Contact Info</h5>
+                    <p class="text-gray-400">
+                        For questions, contact the organizing team.
+                    </p>
+                    <p class="mt-2 text-primary-light font-medium">healthxher@gmail.com</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; HealthXHer Hackathon.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Link to external JavaScript file for logic -->
+    <script src="script.js"></script>
+</body>
+</html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
