@@ -17,6 +17,7 @@ import { Route as HackathonRouteImport } from './routes/hackathon'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ArchiveV1RouteImport } from './routes/archive.v1'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogMindTheDataRouteImport } from './routes/blog.mind-the-data'
 import { Route as BlogPcosIsMoreComplicatedThanItsNameRouteImport } from './routes/blog.pcos-is-more-complicated-than-its-name'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const BlogMindTheDataRoute = BlogMindTheDataRouteImport.update({
+  id: '/mind-the-data',
+  path: '/mind-the-data',
+  getParentRoute: () => BlogRoute,
+} as any)
 const BlogPcosIsMoreComplicatedThanItsNameRoute =
   BlogPcosIsMoreComplicatedThanItsNameRouteImport.update({
     id: '/pcos-is-more-complicated-than-its-name',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/hackathon': typeof HackathonRoute
   '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/mind-the-data': typeof BlogMindTheDataRoute
   '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/hackathon': typeof HackathonRoute
   '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/mind-the-data': typeof BlogMindTheDataRoute
   '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/hackathon': typeof HackathonRoute
   '/partners': typeof PartnersRoute
   '/archive/v1': typeof ArchiveV1Route
+  '/blog/mind-the-data': typeof BlogMindTheDataRoute
   '/blog/pcos-is-more-complicated-than-its-name': typeof BlogPcosIsMoreComplicatedThanItsNameRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partners'
     | '/archive/v1'
+    | '/blog/mind-the-data'
     | '/blog/pcos-is-more-complicated-than-its-name'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partners'
     | '/archive/v1'
+    | '/blog/mind-the-data'
     | '/blog/pcos-is-more-complicated-than-its-name'
     | '/blog'
   id:
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partners'
     | '/archive/v1'
+    | '/blog/mind-the-data'
     | '/blog/pcos-is-more-complicated-than-its-name'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -201,6 +213,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/mind-the-data': {
+      id: '/blog/mind-the-data'
+      path: '/mind-the-data'
+      fullPath: '/blog/mind-the-data'
+      preLoaderRoute: typeof BlogMindTheDataRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/pcos-is-more-complicated-than-its-name': {
       id: '/blog/pcos-is-more-complicated-than-its-name'
       path: '/pcos-is-more-complicated-than-its-name'
@@ -223,11 +242,13 @@ const ArchiveRouteWithChildren =
   ArchiveRoute._addFileChildren(ArchiveRouteChildren)
 
 interface BlogRouteChildren {
+  BlogMindTheDataRoute: typeof BlogMindTheDataRoute
   BlogPcosIsMoreComplicatedThanItsNameRoute: typeof BlogPcosIsMoreComplicatedThanItsNameRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
+  BlogMindTheDataRoute: BlogMindTheDataRoute,
   BlogPcosIsMoreComplicatedThanItsNameRoute:
     BlogPcosIsMoreComplicatedThanItsNameRoute,
   BlogIndexRoute: BlogIndexRoute,

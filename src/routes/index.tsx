@@ -240,52 +240,62 @@ function HomePage() {
           </div>
         </section>
 
-       <section className="py-24">
-  <div className="site-container">
-    <SectionIntro
-      centered
-      title="Stories, reflections and updates from the community."
-      copy="A preview of recent thinking, event reflections and community stories from HealthXHer."
-    />
+        <section className="py-24">
+          <div className="site-container">
+            <SectionIntro
+              centered
+              title="Stories, reflections and updates from the community."
+              copy="A preview of recent thinking, event reflections and community stories from HealthXHer."
+            />
 
-    {/* Grid wrapper — two columns on medium screens and up */}
-    <div className="mx-auto mt-12 grid max-w-4xl gap-10 md:grid-cols-2">
-      <div>
-        <img
-          src={images.poster}
-          alt="Women's health research illustration"
-          className="aspect-[16/10] w-full object-cover"
-        />
-        <h3 className="mt-5 font-display text-2xl">PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME</h3>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex.
-        </p>
-        <Button asChild variant="link" className="mt-3 px-0">
-          <Link to="/blog/pcos-is-more-complicated-than-its-name">
-            Read more <ArrowRight />
-          </Link>
-        </Button>
-      </div>
+            <div className="mx-auto mt-12 grid max-w-5xl gap-10 md:grid-cols-2">
+              {([
+                {
+                  title: "MIND THE DATA: HOW WOMEN'S HEALTH GETS LOST IN THE AVERAGES",
+                  excerpt:
+                    "Women now make up about half of participants in clinical trials, but being in a study is not the same as being in its results.",
+                  meta: "Anita Nicoletti · 7 min",
+                  href: "/blog/mind-the-data",
+                  image: images.gallery01,
+                },
+                {
+                  title: "PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME",
+                  excerpt:
+                    "PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex.",
+                  meta: "Suzan Gumush · 4 min",
+                  href: "/blog/pcos-is-more-complicated-than-its-name",
+                  image: images.poster,
+                },
+              ] as const).map((post) => (
+                <article key={post.href} className="flex h-full flex-col">
+                  <img
+                    src={post.image}
+                    alt="Women's health research illustration"
+                    className="aspect-[16/10] w-full object-cover"
+                  />
+                  <p className="mt-5 text-xs uppercase tracking-widest text-muted-foreground">
+                    {post.meta}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl leading-tight">{post.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                    {post.excerpt}
+                  </p>
+                  <Button asChild variant="link" className="mt-3 self-start px-0">
+                    <Link to={post.href}>
+                      Read more <ArrowRight />
+                    </Link>
+                  </Button>
+                </article>
+              ))}
+            </div>
 
-      <div>
-        <img
-          src={images["gallery01"]}
-          alt="Women's health research illustration"
-          className="aspect-[16/10] w-full object-cover"
-        />
-        <h3 className="mt-5 font-display text-2xl">Stay tuned!</h3>
-        <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          Next blog post coming soon!
-        </p>
-        <Button asChild variant="link" className="mt-3 px-0">
-          <Link to="/blog/pcos-is-more-complicated-than-its-name">
-            Read more <ArrowRight />
-          </Link>
-        </Button>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="mt-12 text-center">
+              <Button asChild variant="outline">
+                <Link to="/blog">See all posts</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
 
         <section id="faq" className="soft-section scroll-mt-24 py-24">
           <div className="site-container">

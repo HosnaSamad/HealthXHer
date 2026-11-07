@@ -13,22 +13,33 @@ export const Route = createFileRoute("/blog/")({
   component: BlogPage,
 });
 
-const featuredPost = {
-  title: "PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME",
-  excerpt:
-    "PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex, and it doesn't look the same for everyone.",
-  meta: "Text · Suzan Gumush  ·  4 min",
-  href: "/blog/pcos-is-more-complicated-than-its-name",
-  image: images.poster,
-  imageAlt: "Illustration representing women's health research",
-};
+const POSTS = [
+  {
+    title: "MIND THE DATA: HOW WOMEN'S HEALTH GETS LOST IN THE AVERAGES",
+    excerpt:
+      "Women now make up about half of participants in clinical trials, but being in a study is not the same as being in its results.",
+    meta: "Text · Anita Nicoletti  ·  7 min",
+    href: "/blog/mind-the-data",
+    image: images.gallery01,
+    imageAlt: "Illustration representing women's health data",
+  },
+  {
+    title: "PCOS? PMOS? IT'S MORE COMPLICATED THAN ITS NAME",
+    excerpt:
+      "PCOS has long been linked with periods, fertility and the ovaries. But the condition is far more complex, and it doesn't look the same for everyone.",
+    meta: "Text · Suzan Gumush  ·  4 min",
+    href: "/blog/pcos-is-more-complicated-than-its-name",
+    image: images.poster,
+    imageAlt: "Illustration representing women's health research",
+  },
+] as const;
 
 function BlogPage() {
   return (
     <PageShell>
       <div className="page-enter">
         <BlogHero />
-        <FeaturedPost />
+        <PostList />
       </div>
     </PageShell>
   );
@@ -55,30 +66,34 @@ function BlogHero() {
   );
 }
 
-function FeaturedPost() {
+function PostList() {
   return (
     <section className="site-container py-16 md:py-24">
-      <article className="max-w-xl">
-        <img
-          src={featuredPost.image}
-          alt={featuredPost.imageAlt}
-          className="aspect-[4/3] w-full object-cover"
-        />
-        <h2 className="mt-6 font-display text-3xl">{featuredPost.title}</h2>
-        <p className="mt-4 text-sm leading-6 text-muted-foreground">
-          {featuredPost.excerpt}
-        </p>
+      <div className="grid gap-12 md:grid-cols-2">
+        {POSTS.map((post) => (
+          <article key={post.href} className="flex h-full flex-col">
+            <img
+              src={post.image}
+              alt={post.imageAlt}
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <h2 className="mt-6 font-display text-3xl leading-tight">{post.title}</h2>
+            <p className="mt-4 flex-1 text-sm leading-6 text-muted-foreground">
+              {post.excerpt}
+            </p>
 
-        <div className="mt-7 flex items-center justify-between border-b border-border pb-8 text-xs">
-          <span>{featuredPost.meta}</span>
-          <Link
-            to={featuredPost.href}
-            className="flex items-center gap-2 font-semibold uppercase tracking-widest"
-          >
-            Read more <ArrowRight size={14} />
-          </Link>
-        </div>
-      </article>
+            <div className="mt-7 flex items-center justify-between gap-4 border-b border-border pb-8 text-xs">
+              <span>{post.meta}</span>
+              <Link
+                to={post.href}
+                className="flex shrink-0 items-center gap-2 font-semibold uppercase tracking-widest"
+              >
+                Read more <ArrowRight size={14} />
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
